@@ -1,0 +1,550 @@
+
+
+*{
+  font-family: 'Tajawal', sans-serif;
+  
+  }
+   
+	 
+#headerArea {
+
+   
+    height: 60px;
+    display: none;
+    position: relative;
+    background: #571845;
+    color: #fff;
+}
+
+
+
+#headerArea a h3 {
+    position:absolute;
+    right: 50px;
+    bottom:1px;
+    font-size:20px;
+    color:#fff;
+    font-weight:bold;
+}
+
+#headerArea a {
+    text-decoration: none;
+    color: #ffc300;
+}
+
+
+#iconLogo{
+    
+    font-size:35px;
+    margin:12px;
+}
+	 
+
+#dv {
+    background: #571845;
+  
+}
+
+#dv ul{
+   padding:10px;
+   margin:0;
+   height:80px;
+}
+
+
+#dv ul li {
+    display: inline-block;
+    padding: 10px 5px;
+}
+
+#dv ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    padding: 3px 5px;
+    margin-right: 3px;
+    border-radius: 10px;
+    outline: none;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+
+#dv ul li a:hover {
+  background:#ffc300;  
+}
+
+
+#menu_button_id {
+    position: absolute;
+    top: 5px;
+    color: #fff;
+    left: 10px;
+    font-size: 40px;
+    z-index: 999999;
+    display: none;
+}
+
+
+
+ #menu_button_id span{
+	        display:block;
+	        border-top: 4px solid #ffc300;
+	        margin:8px auto;
+	        width:35px;
+	    } 
+	    
+	    
+
+#menu_list_id {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #ffc300;
+    top: 0;
+    z-index: 999;
+    transition: all 1s;
+}
+
+#menu_list_id ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+#menu_list_id li {
+    display: block;
+    margin: 20px;
+}
+
+#menu_list_id li a {
+    text-decoration: none;
+    background: #571845;
+    font-size: 17px;
+    line-height: 30px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    display: block;
+}
+
+#menu_list_id li a:hover {
+    background: #c70039;
+    color: #000;
+}
+
+
+#list_table{
+    
+     direction:ltr;
+     font-size:15px;
+     width:70%;
+     margin:auto;
+}
+
+#mySearch{
+    margin:auto;
+    box-shadow: 0 0 12px 6px rgb(0 0 0 / 15%);
+}
+
+
+#responsDiv {
+    text-align:center;
+    margin:20px auto;
+    background:#01DFA5;
+    width:70%;
+    font-size:20px;
+    color:#fff;
+    border-radius:5px;
+}
+  
+  .toptabs{
+    text-align:center;
+    background:#571845;
+    padding:10px;
+  }
+  
+  .toptabs a{
+      color:#ffc300;
+      text-decoration:none;
+      
+  }
+  
+  
+   .toptabs button{
+  
+     font-size:20px;
+     background:#ffc300;
+     color:#571845;
+     border:0;
+     padding:5px;
+     margin:5px;
+     border-radius:5px;
+     box-shadow: 0 0 12px 6px ;
+  }
+  
+  
+  
+  
+  .searchHome{
+      text-align:center;
+      margin:5px auto;
+       position:relative;
+  }
+  
+   .searchHome input, .searchHome div{
+      margin:auto;
+       width:50%;
+   }
+   
+   #tblDrug {
+       width:100%;
+       margin-top:5px;
+   }
+    #tblDrug tr{
+   border-bottom: 1px solid #571845;
+   
+    }
+    
+     #tblDrug td{
+         padding:10px;
+     }
+   
+    #tblDrug a{
+    
+      text-decoration:none;
+    }
+    
+     td a { 
+   text-decoration:none;
+   display: block; 
+   color:#571845;
+   }
+   
+   #tblDrug tr:hover {
+       background-color:#58FAF4;
+       
+   }
+   
+   
+   .red a{
+       color:red;
+   }
+   
+   .topVisits{
+       margin:100px auto;
+       width:90%;
+      
+   }
+   
+    .topVisits h1{
+        font-size:20px;
+    }
+  
+  
+  .login{
+      
+      width:60%;
+      margin:100px auto;
+  }
+  
+   .login input{
+       margin-bottom:10px;
+   }
+  
+  
+  
+  
+   .form-control{
+       width:65%;
+       margin:5px auto;
+   } 
+   
+   
+   #responseContent{
+       background:green;
+       display:block;
+       padding:10px;
+       
+       margin:20px;
+       color:#fff;
+       text-align:center;
+   }
+  
+ 
+ 
+ .capitalize:first-letter {
+    text-transform:capitalize;
+} 
+
+#topVtbl {
+    font-size:15px;
+}
+
+#topVtbl th{
+    text-align:right;
+}
+
+
+
+
+  
+.sliderContainer{
+     text-align:center;
+     margin:20px auto;
+       }
+ .slider {
+      width: 90%;
+      margin: auto 5px;
+      overflow: hidden;
+      display:inline-block;
+      border:2px solid black;
+      border-radius:10px;
+      direction:ltr;
+}
+ .slider ul{
+     padding: 5px;
+	 margin:0;
+     display: flex;
+     animation: slid 60s infinite reverse;
+     animation-timing-function: ease-in;
+}
+ .slider li {
+     width: 100%;
+     list-style: none;
+     text-align:center;
+	 cursor:pointer;
+}
+
+.slider li a{
+display: block;
+width:100%;
+text-decoration:none;
+ font-weight:bold;
+ font-size:15px;
+}
+
+
+ 
+.slider:hover #ulSlider {
+     animation-play-state:paused;
+}
+
+  
+  
+.imgSlider{
+width:150px;
+height:100px;
+}
+
+
+
+.footer {
+    background: #FAFAFA;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+.footer div {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+
+.footer h2 {
+    margin: 10px;
+    color: #000;
+    font-size: 22px;
+    text-align: right;
+}
+
+.footer li {
+    text-align: right;
+    color: #000;
+    font-size: 15px;
+    padding: 7px;
+    list-style: none;
+}
+
+.footer a {
+    text-decoration: none;
+   color: #08298A;
+}
+
+.footer p {
+    
+    color: #000;
+    font-size: 15px;
+}
+
+
+
+
+#copyrightContainer {
+    text-align: center;
+    background: #2ECCFA;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding:5px;
+}
+
+
+
+
+
+
+.shareButtons {
+    text-align: center;
+    margin:10px auto;
+}
+
+
+
+.shareButtons a {
+   
+    padding: 5px;
+    margin: 2px 10px;
+    font-size: 30px;
+
+}
+
+
+.medCard{
+      background:#fff;
+      width:80%;
+      border-radius:10px;
+      padding:10px;
+      margin:10px auto;
+      text-align:center;
+      box-shadow: 0 0 12px 6px rgb(0 0 0 / 15%);
+  }
+  
+   
+ 
+  .medcontainer h2{
+      
+       font-size:30px;
+       background:#ffc300;
+       padding:7px;
+       margin:10px;
+       
+       
+       
+        }
+   
+       
+       .redBold{
+           font-weight:bold;
+           color:red;
+           font-size:40px;
+          
+           
+       }
+       
+       #drugImg{
+        border:1px solid black;
+       border-radius:10px;
+       }
+       
+        .medcontainer h3{
+       font-size:25px;
+        }
+       
+       
+       #letter{
+           margin:30px auto;
+           width:300px;
+           height:250px;
+           background:#610B4B;
+           color:#fff;
+           font-size:100px;
+           font-weight:bold;
+           text-align:center;
+           padding:50px;
+       }
+       
+       .tbl {
+           color:#000;
+           width:95%;
+           margin:10px auto;
+           
+       }
+       .tbl tr, .tbl td{
+           border:1px solid black;
+           padding:5px;
+           
+       }
+       
+       #tblSimilar{
+           color:#000;
+           width:95%;
+           margin:10px auto;
+           
+       }
+       #tblSimilar th{
+           background:#000;
+           color:#fff;
+           text-align:center;
+       }
+       
+       #letter:first-letter {
+    text-transform:capitalize;
+     } 
+       
+  
+  
+
+               
+               
+
+@media only screen and (max-width:800px) {
+
+ #headerArea {
+        display: block;
+    }
+	
+
+
+ #dv {
+        display: none;
+    }
+
+ #menu_button_id {
+        display: block;
+    }
+
+
+  #menu_list_id {
+        display: block;
+        position: fixed;
+        left: -1100px;
+    }
+
+ .medcontainer{
+         width:100%;
+    }
+    
+    
+    .medCard{
+    
+      width:95%;
+    }
+  
+  
+  .searchHome input, .searchHome div{
+     
+       width:90%;
+   }
+   
+   .form-control{
+       width:95%;
+   }
+  
+   .slider {
+        width: 95%;
+    }
+}
+  

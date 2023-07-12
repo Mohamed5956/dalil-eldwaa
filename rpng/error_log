@@ -1,0 +1,80 @@
+[22-Jan-2023 05:06:14 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 05:06:14 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 05:06:14 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 05:06:14 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:11
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(11): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 11
+[22-Jan-2023 05:10:05 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 05:10:05 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 05:10:05 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 05:10:05 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:15
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(15): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 15
+[22-Jan-2023 14:52:28 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:28 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:28 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 14:52:28 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:15
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(15): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 15
+[22-Jan-2023 14:52:29 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:29 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:29 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 14:52:29 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:15
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(15): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 15
+[22-Jan-2023 14:52:29 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:29 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:29 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 14:52:29 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:15
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(15): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 15
+[22-Jan-2023 14:52:29 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:29 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:29 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 14:52:29 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:15
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(15): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 15
+[22-Jan-2023 14:52:32 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:32 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:32 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 14:52:32 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:15
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(15): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 15
+[22-Jan-2023 14:52:32 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:32 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:32 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 14:52:32 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:15
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(15): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 15
+[22-Jan-2023 14:52:32 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:32 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:32 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 14:52:32 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:15
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(15): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 15
+[22-Jan-2023 14:52:33 UTC] PHP Warning:  include(conn.php): Failed to open stream: No such file or directory in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:33 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/orop45g666vs/public_html/rpng/server.php on line 2
+[22-Jan-2023 14:52:33 UTC] PHP Warning:  Undefined variable $db in /home/orop45g666vs/public_html/rpng/server.php on line 7
+[22-Jan-2023 14:52:33 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/orop45g666vs/public_html/rpng/server.php:15
+Stack trace:
+#0 /home/orop45g666vs/public_html/rpng/server.php(15): mysqli_query()
+#1 {main}
+  thrown in /home/orop45g666vs/public_html/rpng/server.php on line 15
