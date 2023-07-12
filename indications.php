@@ -36,11 +36,6 @@ include 'menu.php';
             word-wrap: break-word;
             word-break: break-word;
         }
-        .text-wrap {
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            word-break: break-word;
-        }
     </style>
 </head>
 <body>
