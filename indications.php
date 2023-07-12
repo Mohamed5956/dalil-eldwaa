@@ -29,7 +29,12 @@ include 'menu.php';
     <style>
         .carousel-item img {
             width: 100%;
-            max-height: 300px;
+            max-height: 500px;
+        }
+        .text-wrap {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
         }
         .text-wrap {
             overflow-wrap: break-word;
