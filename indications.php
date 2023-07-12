@@ -66,17 +66,17 @@ echo "<img src='" . $row['img'] . "' height='250' width='300' style='object-fit:
     ?>
 </div>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-g4+1d-5f-jd+1jh"
-     data-ad-client="ca-pub-7891698547800920"
-     data-ad-slot="1765162170"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"-->
+<!--     crossorigin="anonymous"></script>-->
+<!--<ins class="adsbygoogle"-->
+<!--     style="display:block"-->
+<!--     data-ad-format="fluid"-->
+<!--     data-ad-layout-key="-g4+1d-5f-jd+1jh"-->
+<!--     data-ad-client="ca-pub-7891698547800920"-->
+<!--     data-ad-slot="1765162170"></ins>-->
+<!--<script>-->
+<!--     (adsbygoogle = window.adsbygoogle || []).push({});-->
+<!--</script>-->
 
 
 
