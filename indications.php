@@ -31,11 +31,15 @@ include 'menu.php';
             width: 100%;
             max-height: 300px;
         }
+        .text-wrap {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <hr>
+<div class="container mt-5">
 <div style="text-align:right;margin:5px">
 <h2>
     استعمالات دواء
@@ -102,7 +106,7 @@ echo "<div align='center'><a  href='admin/edit_med.php/?id=". $row["id"] ."'><bu
     
     
 <br>
-    <div class="container">
+    <div class="container text-wrap">
         <?php echo "<h2 class='mb-3'>ما هو دواء " . $row['arabic'] . "</h2>"; ?>
         <p>
             مرحباً بكم في موقع دليل الدواء الجديد، وتحديداً في صفحة دواء
@@ -130,17 +134,17 @@ echo "<div align='center'><a  href='admin/edit_med.php/?id=". $row["id"] ."'><bu
             <br>
             <br>
 
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"
-                    crossorigin="anonymous"></script>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-format="fluid"
-                 data-ad-layout-key="-g4+1d-5f-jd+1jh"
-                 data-ad-client="ca-pub-7891698547800920"
-                 data-ad-slot="1765162170"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+<!--            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"-->
+<!--                    crossorigin="anonymous"></script>-->
+<!--            <ins class="adsbygoogle"-->
+<!--                 style="display:block"-->
+<!--                 data-ad-format="fluid"-->
+<!--                 data-ad-layout-key="-g4+1d-5f-jd+1jh"-->
+<!--                 data-ad-client="ca-pub-7891698547800920"-->
+<!--                 data-ad-slot="1765162170"></ins>-->
+<!--            <script>-->
+<!--                (adsbygoogle = window.adsbygoogle || []).push({});-->
+<!--            </script>-->
 
             <br>
             <br>
@@ -153,61 +157,15 @@ echo "<div align='center'><a  href='admin/edit_med.php/?id=". $row["id"] ."'><bu
    <a target="_blank" href="/drg.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">السعر</button></a>    
     <br>
 <br>    
-    
-    
-    
-    
-    
 
 </div>
 
 
-
-
-
-
-
 </div>
-
-<div class="usesKeywords" align="right" style="margin:10px">
-    <p>
- كلمات دلالية
-    </p>
-   <li>
-       ما هي استعمالات دواء
-        <?php  echo $row['arabic'] . "  "  .  ucfirst($row['name']); ?>
-   </li>
-
-   <li>
-      دواعي استعمال
-        <?php  echo $row['arabic'] . "  "  .  ucfirst($row['name']); ?>
-   </li>
-
-    <li>
-       استخدامات علاج
-        <?php  echo  $row['name']; ?>
-   </li>
-
-    <li>
-      فيم يستخدم دواء/ علاج
-        <?php  echo $row['arabic'] . "  "  .  ucfirst($row['name']); ?>
-   </li>
-
-    <li>
- هل يستخدم دواء
-        <?php  echo $row['arabic'] . "  "  .  ucfirst($row['name']); ?>
-        لعلاج
-   </li>
-
-    <li>
-متى استعمل علاج
-        <?php  echo $row['arabic'] . "  "  .  ucfirst($row['name']); ?>
-   </li>
-
-</div>
-    <div class="container">
+    <hr>
+    <div class="container mb-5">
         <h2 class="m-5 decoration-dashed">كتب ذات صله</h2>
-        <div id="myCarousel" class="carousel slide col-6" data-bs-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php
                 // Retrieve book data from the database and loop through each book
@@ -236,9 +194,11 @@ echo "<div align='center'><a  href='admin/edit_med.php/?id=". $row["id"] ."'><bu
             </button>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</div>
 </body>
+<?php include "footer.php" ?>
 
 <?php
 else:
