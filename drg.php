@@ -66,193 +66,124 @@ mysqli_query($db, $sqloccnt);
 include 'menu.php';
 ?>
 </head>
-
-
-
-
 <body>
-    
-     <div class="pricemetatagsarea" style="width:95%;padding:3px;border-radius:5px;margin:5px auto;background:#fff">
-<h1 class="text-4xl text-right	">سعر  
-<?php echo $row['arabic'] . " <br> " . ucfirst($row['name']) . " الجديد | 2023"  ?>
-</h1>
- 
+<div class="container">
+    <div class="row ">
+        <div class="col-12 d-flex justify-content-start align-items-center mb-4">
+            <h2 class="card-title">سعر<?php echo $row['arabic'] . " <br> " . ucfirst($row['name']) . " الجديد | 2023"  ?></h2>
+        </div>
+        <div align="center" class="mb-3">
+            <img src=" <?php echo $row['img']?>" alt="<?php echo $row['arabic']?>"
+                 class="card-img-top rounded-lg transform hover:scale-125 transition duration-200"
+                 style="object-fit:contain; height: 350px;width: 400px;">
+        </div>
+        <div>
+            <h2 id="features-heading" class="font-medium text-gray-500 text-center mt-3">سعر دواء  <?php echo $row['arabic']?></h2>
+        </div>
+        <div class="d-flex justify-content-around align-items-center my-3">
+            <a href="https://api.whatsapp.com/send?phone=+201018126196&amp;text=ORDER FROM DLILDWA <?php echo $row['name'];  ;?>."><button class="btn btn-success btnCount" >اطلب عبر واتساب <i class="fab fa-whatsapp"></i></button></a>
+            <a href="tel:+201018126196"><button class="btn btn-primary btnCount" >اطلب عن طريق اتصال</button></a>
+        </div>
+
+    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="mb-3">معلومات سريعة عن
+                <b>
+                    <?php echo $row['arabic']?>
+                </b>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-4 col-12 col-md-3 text-center">
+            <div class="shadow p-3 bg-white rounded">
+                <div>
+                    <h4 class="font-medium text-gray-900">الشركة</h4>
+                    <dd class="mt-2 text-gray-500"><?php echo $row['company']?></dd>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-12 col-md-3 text-center">
+            <div class="shadow p-3 bg-white rounded">
+                <div>
+                    <h4 class="font-medium text-gray-900">نوع الدواء</h4>
+                    <dd class="mt-2 text-gray-500"><?php echo $row['artype']." ".$row['arroute']?></dd>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-12 col-md-3 text-center">
+            <div class="shadow p-3 bg-white rounded">
+                <div>
+                    <h4 class="font-medium text-gray-900">اخر تحديث للسعر</h4>
+                    <dd class="mt-2 text-gray-500"><?php echo $row['lastupdated']?></dd>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-12 col-md-3 text-center">
+            <div class="shadow p-3 bg-white rounded">
+                <div>
+                    <h4 class="font-medium text-gray-900">عدد الزيارات</h4>
+                    <dd class="mt-2 text-gray-500"><?php echo $row['visits']?></dd>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3 p-3">
+        <div class="col-12 text-center p-5" style="background-color: #f8f9fa">
+
+            <h3 class="my-3" style="font-size:25px;font-weight:bold;color:blue">            لاظهار سعر  <?php if($row['arabic'] !=""){echo $row['arabic'];}else{echo ucfirst($row['name']);} ?> الجديد </h3>
+            <p style="font-size:25px;color:#212529;font-weight:bold" class="hid my-3"> فضلا اضغط بالاسفل </p>
+            <div class="hidden my-3" style="display:none">
+                <h3>سعر  <?php if($row['arabic'] !=""){echo $row['arabic'];}else{echo ucfirst($row['name']);} ?> الجديد </h3>
+                <span  style="color:#FE2E2E ;font-weight:bold;font-size:50px;"> <?php if($row['pricenw'] > $row['price']){echo $row['pricenw'];}else{echo $row['price'];} ?> جنيه</span>
+            </div>
+            <button class="btn btn-primary toggled">
+                اظهار السعر
+            </button>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-12 d-flex align-items-center justify-content-around">
+            <div>
+                <a target="_blank" href="/indications.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">الإستعمال</button></a>
+            </div>
+            <div>
+                <a target="_blank" href="/composition.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"> المكونات</button></a>
+            </div>
+            <div>
+                <a target="_blank" href="/alternatives.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">البدائل</button></a>
+            </div>
+
+        </div>
+    </div>
 </div>
-
-
-
-   
-     
- 
 
 
 <!--w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md   lg:h-80 -->
 <div class="bg-white">
   <section aria-labelledby="features-heading" class="relative">
-<div class="w-full min-h-80 aspect-w-1 aspect-h-1 overflow-hidden sm:aspect-w-5 lg:aspect-none lg:absolute lg:w-1/2 lg:h-80 lg:pr-4 xl:pr-16">
-    
-    
-    
-    
-    
-    
-    
-  <img src="<?php echo $row['img']?>" alt="<?php echo $row['arabic']?>" class="rounded-lg bg-gray-100 transform hover:scale-125 transition duration-200">
-  
-  
-  
-  
-  
-  
-  <br>
-  
-  
-  <button class="price-btn hidden transition duration-200 ease-in-out hover:block">Price</button>
-  <button class="uses-btn hidden transition duration-200 ease-in-out hover:block">Uses</button>
-</div>
-    
-   
-  
-    
-    
-    <div class="max-w-2xl mx-auto pt-1 pb-24 px-4 sm:pb-32 sm:px-6 lg:max-w-7xl lg:pt-32 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
-        
-      <div class="lg:col-start-2 text-right	">
-        <h2 id="features-heading" class="font-medium text-gray-500">سعر دواء  <?php echo $row['arabic']?></h2>
-        
-        
-        
-<br>
-<br>
-        <a href="https://api.whatsapp.com/send?phone=+201018126196&amp;text=ORDER FROM DLILDWA <?php echo $row['name'];  ;?>."><button class="btn btn-success btnCount" >اطلب عبر واتساب <i class="fab fa-whatsapp"></i></button></a>
-  <br><br>
-  <a href="tel:+201018126196"><button class="btn btn-primary btnCount" >اطلب عن طريق اتصال</button></a>
-      
-  </div>
-  
-
-
-<br>
-<br>
-        
-        <p class="mt-4 text-4xl font-extrabold text-gray-900 tracking-tight"><?php echo $row['arabic']?></p>
-        <p class="mt-4 text-gray-500"><?php echo $row['name']?></p>
-
-        <dl class="mt-10 grid grid-cols-1 gap-y-10 gap-x-8 text-sm sm:grid-cols-2">
-          <div>
-            <dt class="font-medium text-gray-900">الشركة</dt>
-            <dd class="mt-2 text-gray-500"><?php echo $row['company']?></dd>
-          </div>
-
-          <div>
-            <dt class="font-medium text-gray-900">نوع الدواء </dt>
-            <dd class="mt-2 text-gray-500"><?php echo $row['artype']." ".$row['arroute']?></dd>
-          </div>
-
-          <div>
-            <dt class="font-medium text-gray-900"> اخر تحديث للسعر</dt>
-            <dd class="mt-2 text-gray-500"><?php echo $row['lastupdated']?></dd>
-          </div>
-
-          <div>
-            <dt class="font-medium text-gray-900">عدد الزيارات </dt>
-            <dd class="mt-2 text-gray-500"><?php echo $row['visits']?></dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </section>
-</div>    
-    
- 
-  <div align="center">
-      
-  
-
-    
-    
-<div class="text-center ">
-
-<h3 class="text-2xl	">
- سعر دواء
-<?php echo  ucfirst($row['name']) . " | " . $row['arabic'] ; ?> 
-</h3>
-<hr>
-
-<p class='text-lg '>
-<i class="text-sky-500 fas fa-eye"></i>
-<?php echo $row['visits'];?>
-  مشاهدات/زيارات 
-</p>
-<?php
-if ((isset( $_SESSION['email']) && $_SESSION['usergroup'] == 2) || (isset($_COOKIE['UEMAIL']) && $_COOKIE['UGROUP'] == 2 ) ){
-echo "<hr><a  href='medrg/edit.php?id=". $row["id"] ."'><button class='btn btn-danger'>Edit this med</button></a><hr>";
-}
-?>
-<br>
-
-
 
 
 <div align="center">
-<div id="priceArea" style="width:85%;margin:10px auto;padding:15px 5px;background:#F2F2F2;border-radius:5px;"> 
+      
+  
 
 
 
-<br>
-
-<p style="font-size:25px;color:#212529;font-weight:bold" class="hid">
-    لاظهار  
-    <h3 style="font-size:25px;color:red;font-weight:bold">سعر  <?php if($row['arabic'] !=""){echo $row['arabic'];}else{echo ucfirst($row['name']);} ?> الجديد </h3> 
-    
-    
-</p>
-
-<p style="font-size:25px;color:#212529;font-weight:bold" class="hid"> فضلا اضغط بالاسفل </p>
-
-
-
-
-
-<div class="hidden" style="display:none">
-<h3>سعر  <?php if($row['arabic'] !=""){echo $row['arabic'];}else{echo ucfirst($row['name']);} ?> الجديد </h3>
-
-<span  style="color:#FE2E2E ;font-weight:bold;font-size:50px;"> <?php if($row['pricenw'] > $row['price']){echo $row['pricenw'];}else{echo $row['price'];} ?> جنيه</span> 
-</div>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"
-     crossorigin="anonymous"></script>
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"-->
+<!--     crossorigin="anonymous"></script>-->
 <!-- drugs page -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7891698547800920"
-     data-ad-slot="7468553298"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<!--<ins class="adsbygoogle"-->
+<!--     style="display:block"-->
+<!--     data-ad-client="ca-pub-7891698547800920"-->
+<!--     data-ad-slot="7468553298"-->
+<!--     data-ad-format="auto"-->
+<!--     data-full-width-responsive="true"></ins>-->
+<!--<script>-->
+<!--     (adsbygoogle = window.adsbygoogle || []).push({});-->
+<!--</script>-->
 
-
-
-<br>
-<br>
-<button class="btn btn-primary toggled">
-    اظهار السعر
-</button>
-
-<br><br>
-
-
-
-
-
-
-
-
-   <a target="_blank" href="/indications.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">الإستعمال</button></a>
-   <a target="_blank" href="/composition.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"> المكونات</button></a>
-   <a target="_blank" href="/alternatives.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">البدائل</button></a>
 
 
 
@@ -265,9 +196,9 @@ echo "<hr><a  href='medrg/edit.php?id=". $row["id"] ."'><button class='btn btn-d
 
 <script>
 $(document).ready(function(){
-    
+
 $(document).on('click', '.toggled', function(){
-    
+
 $('.hidden').show();
 $(this).hide();
 $('.hid').hide();
@@ -280,9 +211,9 @@ location.reload();
 
 
 
-});    
-    
-}); 
+});
+
+});
 </script>
 
 
@@ -545,8 +476,8 @@ Share to
 </div>
 
 </div>
-</div>  
-    
+</div>
+
 <script>
 document.getElementById("fbLink").href       = "https://www.facebook.com/sharer/sharer.php?u="+ window.location.href;
 document.getElementById("waLink").href       = "whatsapp://send?text="+ window.location.href.replace(" ","+");

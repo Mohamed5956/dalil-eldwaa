@@ -34,6 +34,9 @@ include 'menu.php';
             word-wrap: break-word;
             word-break: break-word;
         }
+        h1, h2, h3{
+            color: #098bac !important;
+        }
     </style>
 </head>
 <body>
@@ -43,7 +46,7 @@ include 'menu.php';
         <div class="col-12 d-flex justify-content-start align-items-center my-3">
 <!--            <div class="card text-center" style="width: 20rem;">-->
 <!--                <div class="card-body">-->
-                    <h2 class="card-title">    المادة الفعالة  لدواء
+                    <h1 class="card-title">    المادة الفعالة  لدواء
                         <?php
                         if( $row['arabic'] !=""){
                             echo $row['arabic'] . " <br> مكونات علاج "  . ucfirst($row['name']);
@@ -51,7 +54,7 @@ include 'menu.php';
                             echo ucfirst($row['name']);
                         }
                         ?>
-                    </h2>
+                    </h1>
                 </div>
         <div align="center">
             <img src=" <?php if($row['img'] != ""){echo $row['img'];} ?>" class="card-img-top" alt="<?php echo ucfirst($row['name']); ?>" style="object-fit:contain; height: 350px;width: 400px;">
@@ -114,29 +117,32 @@ include 'menu.php';
                 }
                 ?>
             </h2>
-            <p class="text-center text-wrap">
-                مرحباً بكم في موقع دليل الدواء الجديد، وتحديداً في صفحة دواء
-                <?php echo $row['arabic']. " ".$row['name'];?>
+            <p class="text-wrap text-center">
+                مرحبًا بك في موقع دليل الدواء الجديد، وتحديدًا في صفحة دواء <?php echo $row['arabic']. " ".$row['name'];?>.
 
-                يعد دواء <?php echo $row['arabic']. " ".$row['name'];?> من أفضل وأقوى الأدوية التي يتم صرفها واستخدامها في علاج
-                <?php echo $row['uses']." ". $row['indications']?>،
-                حيث أنه يحتوي على مادة فعالة وتركيبة قوية جداً في علاج مثل هذه الحالات ألا وهي
+                <?php echo $row['arabic']. " ".$row['name'];?> هو دواء فعال جدًا يستخدم لعلاج مجموعة متنوعة من الحالات. يحتوي الدواء على <?php echo $row['active'];?>، وهي المادة الفعالة التي توفر التأثير العلاجي للدواء.
 
-                <?php echo $row['active']?>.
-                يتوفر دواء
-                <?php echo $row['arabic']. " ".$row['name'];?> في السوق بسعر
-                <?php echo $row['price'];?> وهو من إنتاج شركة
-                <?php echo $row['company'];?>
-                ومن أشهر بدائل دواء
-                <?php echo $row['arabic']. " ".$row['name'];?>
+                يتم تصفية هذا الدواء بشكل عام لعلاج <?php echo $row['uses'];?>، والتي تشمل <?php echo $row['indications'];?>. يشتهر الدواء بتركيبته القوية وسرعة عمله، مما يجعله اختيارًا شائعًا بين مقدمي الرعاية الصحية والمرضى على حد سواء.
 
+                <?php echo $row['arabic']. " ".$row['name'];?> من إنتاج <?php echo $row['company'];?> ويتوفر في السوق بسعر <?php echo $row['price'];?>. إنه واحد من أشهر وأكثر الأدوية ثقة في فئته، ويتم توصيته عادة من قبل الأطباء بسبب سلامته وفعاليته.
 
-                <?php
-                $qnum   = mysqli_query($db, "SELECT COUNT(*) as total FROM drugs WHERE active = '$active'");
+                قبل تناول <?php echo $row['arabic']. " ".$row['name'];?>، من المهم استشارة مقدم الرعاية الصحية الخاص بك للتأكد من أنه آمن ومناسب لحالتك. تأكد من اتباع تعليمات الجرعة بعناية، ولا تتجاوز الجرعة الموصى بها.
 
-                $num=mysqli_fetch_assoc($qnum);
+                إذا كان لديك أي أسئلة أو مخاوف حول <?php echo $row['arabic']. " ".$row['name'];?> أو أي أدوية أخرى، فلا تتردد في الاتصال بنا. فريقنا من المهنيين الصحيين هنا لمساعدتك في اتخاذ القرارات المستنيرة حول صحتك ورفاهيتك.
+            </p>
+            <hr>
+            <p class="text-center text-wrap">Welcome to the new Drug Guide website, specifically the page for
+                <?php echo $row['arabic']. " ".$row['name'];?>.
 
-                ?>
+                <?php echo $row['arabic']. " ".$row['name'];?> is a highly effective medication that is used to treat a variety of conditions. It contains <?php echo $row['active'];?>, which is the active ingredient that provides the drug's therapeutic effect.
+
+                This medication is typically prescribed to treat <?php echo $row['uses'];?>, which include <?php echo $row['indications'];?>. It is known for its potent formula and fast-acting nature, making it a popular choice among healthcare providers and patients alike.
+
+                <?php echo $row['arabic']. " ".$row['name'];?> is produced by <?php echo $row['company'];?> and is available in the market at a price of <?php echo $row['price'];?>. It is one of the most popular and trusted medications in its class, and is often recommended by doctors for its safety and effectiveness.
+
+                Before taking <?php echo $row['arabic']. " ".$row['name'];?>, it is important to consult with your healthcare provider to ensure that it is safe and appropriate for your condition. Be sure to follow the dosage instructions carefully, and do not exceed the recommended dose.
+
+                If you have any questions or concerns about <?php echo $row['arabic']. " ".$row['name'];?> or any other medications, please don't hesitate to contact us. Our team of healthcare professionals is here to help you make informed decisions about your health and wellness.
             </p>
         </div>
     </div>
@@ -196,8 +202,8 @@ include 'menu.php';
                             $bookImage = $book['img'];
                             ?>
                             <div class="carousel-item <?php echo $firstItem ? 'active' : ''; ?>">
-                                <h4><?php echo $bookTitle; ?></h4>
                                 <img src="<?php echo $bookImage; ?>" alt="<?php echo $bookTitle; ?>">
+                                <p><?php echo $bookTitle; ?></p>
                             </div>
                             <?php
                             $firstItem = false;
