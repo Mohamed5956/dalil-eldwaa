@@ -71,53 +71,6 @@ include 'header.php';
       <?php
       endif;
       ?>
-
     </div>
   </div>
-
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-<style>
-  .nav-link {
-    text-align: right;
-    /* background:#F2F2F2; */
-    padding-right: 15px;
-    margin: 5px;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-
-  .flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 5px;
-  }
-
-  .flex-container div {
-
-
-    font-size: 10px;
-    color: blue;
-    padding: 3px;
-    text-align: center;
-
-  }
-
-  .flex-container div i {
-    font-size: 30px;
-    margin: 4px;
-
-  }
-</style>
