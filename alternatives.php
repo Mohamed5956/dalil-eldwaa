@@ -87,31 +87,19 @@ echo "<img src='" . $row['img'] . "' height='250' width='300' style='object-fit:
     }
     ?>
 </div>
-<p align='center'>
-تم البحث عن بدائل هذا الدواء
-<?php echo $row['sim_visits'];?> 
- مرة
-</p>
+    <p align="center">
+        تم البحث عن بدائل هذا الدواء
+        <span style="color:red;font-size:20px;">
+            <?php echo $row['sim_visits'];?>
+        </span>
+        مرة
+    </p>
+    <hr>
 </div>
 <h3 align="center" style="margin:10px auto;">
 بدايل دواء 
 <?php  echo $row['arabic'] . "  "  .  ucfirst($row['name']); ?>
 </h3>
-
-
-
-<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"-->
-<!--     crossorigin="anonymous"></script>-->
-<!--<ins class="adsbygoogle"-->
-<!--     style="display:block"-->
-<!--     data-ad-client="ca-pub-7891698547800920"-->
-<!--     data-ad-slot="5692437195"-->
-<!--     data-ad-format="auto"-->
-<!--     data-full-width-responsive="true"></ins>-->
-<!--<script>-->
-<!--     (adsbygoogle = window.adsbygoogle || []).push({});-->
-<!--</script>-->
-
 
 
 <p>

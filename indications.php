@@ -22,7 +22,6 @@ mysqli_query($db, $sqlv);
 <meta content='ما هي استعمالات واستخدامات علاج <?php echo $row['arabic'] ." | ". $row['name'] ?> ' name='keywords'/>
 <link href='https://www.pricesdwa.com/favicon.ico' rel='icon' type='image/x-icon'/>
 
-
     <?php
 include 'menu.php';
 ?>
@@ -35,6 +34,10 @@ include 'menu.php';
             overflow-wrap: break-word;
             word-wrap: break-word;
             word-break: break-word;
+        }
+        h1,h2{
+            background-color: #c4ced7;
+            padding: 20px;
         }
     </style>
 </head>
@@ -60,26 +63,17 @@ echo "<img src='" . $row['img'] . "' height='250' width='300' style='object-fit:
     }
     ?>
 </div>
-
-<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"-->
-<!--     crossorigin="anonymous"></script>-->
-<!--<ins class="adsbygoogle"-->
-<!--     style="display:block"-->
-<!--     data-ad-format="fluid"-->
-<!--     data-ad-layout-key="-g4+1d-5f-jd+1jh"-->
-<!--     data-ad-client="ca-pub-7891698547800920"-->
-<!--     data-ad-slot="1765162170"></ins>-->
-<!--<script>-->
-<!--     (adsbygoogle = window.adsbygoogle || []).push({});-->
-<!--</script>-->
-
-
-
 <br>
-تم البحث عن استخدام دواء 
-<?php echo ucfirst($row['name']);?>
+    <p align="center">
+        تم البحث عن استخدام هذا الدواء
+        <span style="color:red;font-size:20px;">
+        <?php echo htmlspecialchars($row['ind_visits'], ENT_QUOTES, 'UTF-8'); ?>
+    </span>
+        مرة
+    </p>
+
+    <hr>
 <br>
-<?php echo $row['ind_visits'];?> 
  مرة
 </div>
 
@@ -176,8 +170,8 @@ echo "<div align='center'><a  href='admin/edit_med.php/?id=". $row["id"] ."'><bu
                     $bookImage = $book['img'];
                     ?>
                     <div class="carousel-item <?php echo $firstItem ? 'active' : ''; ?>">
-                        <h4><?php echo $bookTitle; ?></h4>
                         <img src="<?php echo $bookImage; ?>" alt="<?php echo $bookTitle; ?>">
+                        <p><?php echo $bookTitle; ?></p>
                     </div>
                     <?php
                     $firstItem = false;

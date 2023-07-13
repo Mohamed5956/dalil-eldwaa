@@ -17,7 +17,6 @@ $ip = $_SERVER['REMOTE_ADDR'];
 <!DOCTYPE html>
 <html dir="rtl" style="text-align:right">
 <head>
-     <link href="tailwindcss/output.css" rel="stylesheet">
 <title>
 دليل الدواء 
 </title>
@@ -28,138 +27,167 @@ $ip = $_SERVER['REMOTE_ADDR'];
 <meta property="og:description" content="اسعار ومعلومات استعمال وبدائل الادوية من دليل الدواء ">
 <meta property="og:url" content="https://dlildwa.com/">
 <meta property="og:image" content="https://i.imgur.com/qIgVXpg.png" />
-
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <?php
     $qnum   = mysqli_query($db, "SELECT COUNT(*) as total FROM drugs ");
     
     $num=mysqli_fetch_assoc($qnum);
     
     ?>
+    <style>
+        .carousel-item img {
+            width: 100%;
+            max-height: 500px;
+        }
+    </style>
 </head>
-    
+    <body>
 <br>
+<section class="searchSection">
+    <div class="container mx-auto px-4">
+        <form>
+            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
+            <div class="relative">
+                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <input type="search" id="inputSearch" class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="اكتب اسم االدواء الذي تود البحث عنه" required>
+
+            </div>
+        </form>
+
+        <div id="responseDiv" class=" mb-4 bg-gray-50 rounded-lg border border-gray-100 ">
+        </div>
+    </div>
+</section>
 <p align="center">
     موقع دليل الدواء: عبارة عن محرك بحث للأدوية المصرية وكل المعلومات المتعلقة بها من أسعار، بدائل، إستعمالات، تركيبات ومواد فعالة في أكبر موقع يحتوي على 25 ألف صنف دوائي متوفر في السوق المصري والوطن العربي.
 </p>
 
-
-<div align="center">
-      
-    
-<br>
-<a target="_blank" href="https://dlildwa.com/book.php?id=9">
-<button class="appclick" style="background:#00aecd;font-family:arial;padding:10px 20px;margin:5px;border:0;border-radius:10px;color:#fff;font-size:21px;font-weight:bold;box-shadow: 0 0 6px 1px rgb(0 0 0 / 23%);">
-تطبيق دليل أسعار وبدائل الأدوية للموبايل
-<br>
-يعمل بدون انترنت
-<br>
-للتحميل اضغط هنا 
-</button>
-</a>
-</div>
-
-
-<br>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"
-     crossorigin="anonymous"></script>
-<!-- home-page -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7891698547800920"
-     data-ad-slot="2796818729"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<br>
-
-
-
-
-
-
-
-
-  <div class="container mx-auto px-4"> 
-
-
- <form>   
-    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
-    <div class="relative">
-        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+<section class="booksSection">
+    <div class="container mb-5">
+        <h2 class="m-5 decoration-dashed">أفضل الكتب الطبيه</h2>
+        <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <?php
+                // Retrieve book data from the database and loop through each book
+                $booksQuery = mysqli_query($db, "SELECT * FROM books");
+                $firstItem = true;
+                while ($book = mysqli_fetch_assoc($booksQuery)) {
+                    $bookTitle = $book['arabic'];
+                    $bookImage = $book['img'];
+                    ?>
+                    <div class="carousel-item <?php echo $firstItem ? 'active' : ''; ?>">
+                        <img src="<?php echo $bookImage; ?>" alt="<?php echo $bookTitle; ?>">
+                        <p><?php echo $bookTitle; ?></p>
+                    </div>
+                    <?php
+                    $firstItem = false;
+                }
+                ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <input type="search" id="inputSearch" class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="اكتب اسم االدواء الذي تود البحث عنه" required>
-        
     </div>
-</form>
+</section>
+<section class="IconsSection container">
+    <div class="row">
+        <div class="mb-4 col-12 col-md-4 text-center">
+            <div class="shadow p-3 bg-white rounded">
+                <div>
+                    <h4 class="font-medium text-gray-900">الشركة</h4>
+                    <img src="https://wasfaty.sa/wp-content/uploads/2020/06/logo-rgb-2048x1427.png" alt="logo">
+                </div>
+            </div>
+        </div>
+        <?php
+        // Perform the query to fetch the count of drugs
+        $query = "SELECT COUNT(*) AS drugCount FROM drugs";
+        $result = mysqli_query($db, $query);
 
-<div id="responseDiv" class=" mb-4 bg-gray-50 rounded-lg border border-gray-100 ">
-</div>
-</div>
+        if ($result) {
+            // Retrieve the count of drugs from the query result
+            $row = mysqli_fetch_assoc($result);
+            $drugCount = $row['drugCount'];
+        } else {
+            // Handle the query error if needed
+            $drugCount = "N/A";
+        }
+        ?>
+        <div class="mb-4 col-12 col-md-4 text-center">
+            <div class="shadow p-3 bg-white rounded">
+                <div>
+                    <h4 class="font-medium text-gray-900">عدد الأدويه</h4>
+                    <dd class="mt-2 text-gray-500"><?php echo $drugCount; ?></dd>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-12 col-md-4 text-center">
+            <div class="shadow p-3 bg-white rounded">
+                <div>
+                    <h4 class="font-medium text-gray-900">عدد الزيارات</h4>
+                    <dd class="mt-2 text-gray-500"><?php  ?></dd>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section class="articlesSection container">
+    <div>افضل الموضوعات </div>
+</section>
+<section class="postsSection container">
+    <div>افضل المقالات</div>
+</section>
 
-
-
-
-
-
-
-<div align="center" class="container">
-
-
-
-
-     
-     
-
-  <div align="center">
-      Advertisement
-     <br>
-     
-
-
-  </div> 
-
-
-
-
-
-<div class="text-center">
-<p>
-أكثر الأدوية بحثا عن أسعارها
-</p>
-
-<table id="topVtbl" class="bg-white rounded-lg overflow-hidden text-center border-separate">
-  <thead class="bg-gray-200">
-    <tr>
-      <th class="px-4 py-2">م</th>
-      <th class="px-4 py-2">الدواء</th>
-      <th class="px-4 py-2">السعر</th>
-      <th class="px-4 py-2">مشاهدات</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-    $query = "SELECT * FROM drugs ORDER BY visits DESC LIMIT 100";
-    if(mysqli_query($db, $query)){
-    $i     = 0;
-    $sql   = mysqli_query($db, $query);
-    while ($rowactive = mysqli_fetch_assoc($sql)) {
-    $i++;
-    echo  "<tr class='odd:bg-gray-100'><td class='px-4 py-2'>".$i."</td><td class='px-4 py-2'><a href='drg.php?id=".$rowactive['id']."' dir='ltr'>";
-    if($rowactive['arabic'] != ""){echo $rowactive['arabic'];}else{echo $rowactive['name'];}
-    echo "</a></td><td class='px-4 py-2'>".$rowactive['price']." جنيهاً </td><td class='px-4 py-2'>".$rowactive['visits']." مرةً </td></tr>";     
-    }
-    }
-    ?>
-  </tbody>
-</table>
-</div>   
-</div>
+<section class="DrugsSection">
+    <div class="container mb-5">
+        <h2 class="m-5 decoration-dashed">اعلى ادويه زياره</h2>
+        <div id="drugsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <?php
+                // Retrieve drugs data from the database and loop through each book
+                $query = "SELECT * FROM drugs ORDER BY visits DESC LIMIT 10";
+                if(mysqli_query($db, $query)){
+                    $i     = 0;
+                    $sql   = mysqli_query($db, $query);
+                    $firstItem = true; // Initialize firstItem variable
+                    while ($rowactive = mysqli_fetch_assoc($sql)) {
+                        $i++;
+                        $drg = $rowactive['arabic'];
+                        $drgImg = $rowactive['img'];
+                        ?>
+                        <div class="carousel-item <?php echo $firstItem ? 'active' : ''; ?>">
+                            <img src="<?php echo $drgImg; ?>" alt="<?php echo $drg; ?>">
+                            <div class="carousel-caption">
+                                <?php echo "<p><a style='text-decoration: none;color: white' href='drg.php?id=".$rowactive['id']."'>".$drg."</a></p>"; ?>
+                            </div>
+                        </div>
+                        <?php
+                        $firstItem = false; // Update firstItem after the first iteration
+                    }
+                }
+                ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#drugsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#drugsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
 <div class='shareButtons' style="border:1px solid black; border-radius:5px;width:75%;margin:5px auto;background:#FBFBEF">
 <h4>
 مشاركة دليل الدواء الجديد مع اصدقائك
@@ -169,14 +197,9 @@ $ip = $_SERVER['REMOTE_ADDR'];
 <a href='' id='twLink' target='_blank'><i class='fab fa-twitter'></i></a>
 </div>
 
-<div style="visibility:hidden;height:200px;">
-    
-    <img height="150" width="300" src="https://i.imgur.com/y6LOusj.png" />
-    
-</div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-   document.getElementById("fbLink").href = "https://www.facebook.com/sharer/sharer.php?u="+ window.location.href;
+document.getElementById("fbLink").href = "https://www.facebook.com/sharer/sharer.php?u="+ window.location.href;
    document.getElementById("waLink").href = "whatsapp://send?text="+ window.location.href.replace(" ","+");
    document.getElementById("twLink").href = "https://twitter.com/share?url="+ window.location.href;
 $(document).ready(function(){
@@ -195,7 +218,7 @@ var searchterm   = $('#inputSearch').val();
       success: function(response){
       }
 
-  	});		
+  	});
 }
 */
 if($('#inputSearch').val().length > 1){
@@ -208,21 +231,21 @@ var searchq   = $('#inputSearch').val();
       	'searchq': searchq,
       },
       success: function(response){
-        var results = JSON.parse(response);  
+        var results = JSON.parse(response);
      $('#responseDiv').html("<table id='tblDrug'></table>");
      for(i=0;i<results.length;i++){
-      tblDrug.innerHTML += 
+      tblDrug.innerHTML +=
       "<tr><td><a class='track' href='" + "<?php if((isset( $_SESSION['email']) && $_SESSION['usergroup'] == 3)){echo "/medrg/edit";}else{echo "drg";}?>" + ".php?id="+results[i].id+"' target='_blank'>"+
       "<span  style='font-size:18px;font-weight:bold;color:#0404B4'>"+results[i].name.charAt(0).toUpperCase() + results[i].name.slice(1)+"</span><br>"+
       "<span  style='font-size:15px;color:#000'>"+results[i].arabic+"</span><br>"+
       "<span style='font-size:11px'>"+results[i].id+ "|"  +results[i].visits   + "V|" +results[i].active.slice(0,15)+ ".. - ..</span></a></td>"+
-      "<td style='width:20%'><a href='/drg.php?id="+results[i].id+"'><span style='font-size:20px;font-weight:bold;color:#FF0000'>"+results[i].price+"</span> L.E.</a></td></tr>"   
+      "<td style='width:20%'><a href='/drg.php?id="+results[i].id+"'><span style='font-size:20px;font-weight:bold;color:#FF0000'>"+results[i].price+"</span> L.E.</a></td></tr>"
 
-       } 
+       }
       }
 
-  	});		
-  	
+  	});
+
    }else{
        $('#responseDiv').html("");
    }
@@ -230,7 +253,7 @@ var searchq   = $('#inputSearch').val();
 
 });
 </script>
-
+    </body>
 <?php 
 include 'footer.php'; 
 ?>
