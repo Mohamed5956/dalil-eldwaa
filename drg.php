@@ -23,48 +23,41 @@ mysqli_query($db, $sqlv);
 
 
 if (isset($_POST['btnCount'])){
-
 $nameOr  =  $row['name'];
 $priceOr =  $row['price'];
 $dateOr  =  date("Y/m/d");
-
 $sqlOrder = "INSERT INTO orders (name, price, date) VALUES ('$nameOr','$priceOr','$dateOr')";
-mysqli_query($db, $sqlOrder); 
-
-
+mysqli_query($db, $sqlOrder);
 //$sqlbtncnt = "UPDATE global SET btnCount = btnCount + 1";
-//mysqli_query($db, $sqlbtncnt); 
-
-
-
+//mysqli_query($db, $sqlbtncnt);
 $sqloccnt = "UPDATE drugs SET orderCount = orderCount+1 WHERE id = $id";
 mysqli_query($db, $sqloccnt);
-
-
-
-
 }
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="robots" content="index, follow" />
+    <title>سعر دواء <?php echo $row['arabic'] . "  " . $row['name'] . " الجديد | " .  "2023"  . " ثمن علاج " . $row['arabic'] . " price | " . $row['price'] ; ?> | دليل الدواء الجديد</title>
+    <meta content='دليل الدواء الجديد <?php echo $row['name'] ?> ' name='keywords'/>
+    <meta content=' سعر <?php echo  $row['name'] . " - "  . $row['arabic'] . " - "  ?>' property="og:description"/>
+    <meta property="og:title" content=" <?php echo $row['arabic'] . " - " . $row['name'] . " price"; ?>">
+    <meta property="og:image" content="<?php if($row['img'] != ''){ echo $row['img'];}else{ echo "https://www.dlildwa.com/favy.png";} ?> ">
+    <?php
+    include 'menu.php';
+    ?>
 
-    
-<meta name="robots" content="index, follow" />
-<title>سعر دواء <?php echo $row['arabic'] . "  " . $row['name'] . " الجديد | " .  "2023"  . " ثمن علاج " . $row['arabic'] . " price | " . $row['price'] ; ?> | دليل الدواء الجديد</title>
-<meta content='دليل الدواء الجديد <?php echo $row['name'] ?> ' name='keywords'/>
-<meta content=' سعر <?php echo  $row['name'] . " - "  . $row['arabic'] . " - "  ?>' property="og:description"/>
-<meta property="og:title" content=" <?php echo $row['arabic'] . " - " . $row['name'] . " price"; ?>">
-<meta property="og:image" content="<?php if($row['img'] != ''){ echo $row['img'];}else{ echo "https://www.dlildwa.com/favy.png";} ?> ">
-<?php
-include 'menu.php';
-?>
+    <style>
+        .text-wrap {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+        .qr{
+            background-color: #eaeaea;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -97,7 +90,7 @@ include 'menu.php';
     </div>
     <div class="row">
         <div class="mb-4 col-12 col-md-3 text-center">
-            <div class="shadow p-3 bg-white rounded">
+            <div class="shadow p-3 bg-white rounded" style="height: 116px">
                 <div>
                     <h4 class="font-medium text-gray-900">الشركة</h4>
                     <dd class="mt-2 text-gray-500"><?php echo $row['company']?></dd>
@@ -105,7 +98,7 @@ include 'menu.php';
             </div>
         </div>
         <div class="mb-4 col-12 col-md-3 text-center">
-            <div class="shadow p-3 bg-white rounded">
+            <div class="shadow p-3 bg-white rounded" style="height: 116px">
                 <div>
                     <h4 class="font-medium text-gray-900">نوع الدواء</h4>
                     <dd class="mt-2 text-gray-500"><?php echo $row['artype']." ".$row['arroute']?></dd>
@@ -113,7 +106,7 @@ include 'menu.php';
             </div>
         </div>
         <div class="mb-4 col-12 col-md-3 text-center">
-            <div class="shadow p-3 bg-white rounded">
+            <div class="shadow p-3 bg-white rounded" style="height: 116px">
                 <div>
                     <h4 class="font-medium text-gray-900">اخر تحديث للسعر</h4>
                     <dd class="mt-2 text-gray-500"><?php echo $row['lastupdated']?></dd>
@@ -121,7 +114,7 @@ include 'menu.php';
             </div>
         </div>
         <div class="mb-4 col-12 col-md-3 text-center">
-            <div class="shadow p-3 bg-white rounded">
+            <div class="shadow p-3 bg-white rounded" style="height: 116px">
                 <div>
                     <h4 class="font-medium text-gray-900">عدد الزيارات</h4>
                     <dd class="mt-2 text-gray-500"><?php echo $row['visits']?></dd>
@@ -157,20 +150,190 @@ include 'menu.php';
 
         </div>
     </div>
+    <div class="row my-3">
+        <hr>
+        <div class="col-12 my-3">
+            <h2>أسئلة شائعة عن</h2>
+            <div class="py-3">
+                <div>
+                    <h3 class="text-center qr">
+                        كيف يستعمل دواء<?php echo ucfirst($row['arabic']); ?> ؟
+                    </h3>
+                    <div>
+                        <p>
+                            يستعمل دواء
+                            <?php echo ucfirst($row['arabic']).$row['name']; ?>
+                            <?php if($row['uses'] != "sexual tonic"){echo $row['uses'];}else{echo "<span> </span>";} ?>
+                            <?php echo $row['uses'];?>
+                        </p>
+                        <p><?php echo $row['description'];?></p>
+                        <p><?php echo $row['indications'];?></p>
+
+                    </div>
+                </div>
+
+                <div class="py-3">
+                    <h3 class="text-center qr">  ما هي تركيبة دواء <?php echo ucfirst($row['arabic']); ?> ? </h3>
+                    <div>
+                        <p>تركيبة دواء<?php echo ucfirst($row['arabic']).$row['name']; ?></p>
+                        <p>يتركب هذا الدواء من :<?php echo $row['active'];?></p>
+                    </div>
+                </div>
+
+                <div class="py-3">
+                    <h3 class="text-center qr">ما هي الشركة المنتجة لدواء<?php echo ucfirst($row['arabic']); ?> ؟ </h3>
+                    <div>
+                        <p>الشركة المنتجة لدواء<?php echo ucfirst($row['arabic']).$row['name']; ?></p>
+                        <p>هذا الدواء من انتاج شركة  <?php echo $row['company'];?></p>
+                    </div>
+                </div>
+
+                <div class="py-3">
+                    <h3 class="text-center qr">ما هي جرعة دواء<?php echo ucfirst($row['arabic']); ?>  ؟</h3>
+                    <div>
+                        <p>جرعة دواء<?php echo ucfirst($row['arabic']); ?></p>
+                       <p><?php echo $row['dose'];?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <hr>
+        <div class="col-12">
+            <h2>All You Need To Know About <b><?php echo $row['name'];?> </b></h2>
+            <div class="content-en">
+                <p>
+                    Welcome to the new Drug Guide website, specifically the page for
+                    <?php echo $row['arabic']. " ".$row['name'];?>.
+
+                    <?php echo $row['arabic']. " ".$row['name'];?> is a highly effective medication that is used to treat a variety of conditions. It contains <?php echo $row['active'];?>, which is the active ingredient that provides the drug's therapeutic effect.
+
+                    This medication is typically prescribed to treat <?php echo $row['uses'];?>, which include <?php echo $row['indications'];?>. It is known for its potent formula and fast-acting nature, making it a popular choice among healthcare providers and patients alike.
+
+                    <?php echo $row['arabic']. " ".$row['name'];?> is produced by <?php echo $row['company'];?> and is available in the market at a price of <?php echo $row['price'];?>. It is one of the most popular and trusted medications in its class, and is often recommended by doctors for its safety and effectiveness.
+
+                    Before taking <?php echo $row['arabic']. " ".$row['name'];?>, it is important to consult with your healthcare provider to ensure that it is safe and appropriate for your condition. Be sure to follow the dosage instructions carefully, and do not exceed the recommended dose.
+
+                    If you have any questions or concerns about <?php echo $row['arabic']. " ".$row['name'];?> or any other medications, please don't hesitate to contact us. Our team of healthcare professionals is here to help you make informed decisions about your health and wellness.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <hr>
+        <p>
+            <?php
+            $qnum = mysqli_query($db, "SELECT COUNT(*) as total FROM drugs WHERE active = '$active'");
+            $num=mysqli_fetch_assoc($qnum);
+            ?>
+        </p>
+        <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-5 md:mb-6">
+            بدائل دواء
+            <?php echo ucfirst($row['arabic']); ?>
+        </h2>
+        <div class="mb-4 col-12 col-md-4 text-center">
+            <div class="shadow p-3 bg-white rounded">
+                <i class="fa-solid fa-store"></i>
+                <div>
+                    <div class="text-indigo-500 text-xl sm:text-2xl md:text-3xl font-bold"><?php echo $num['total']; ?>+</div>
+                    <div class="text-sm sm:text-base font-semibold">عدد البدائل</div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-12 col-md-4 text-center">
+            <div class="shadow p-3 bg-white rounded">
+                <i class="fa-solid fa-store"></i>
+                <div>
+                    <div id="visitor-count" class="text-indigo-500 text-xl sm:text-2xl md:text-3xl font-bold ">0+</div>
+                    <div class="text-sm sm:text-base font-semibold">زائر</div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-12 col-md-4 text-center">
+            <div class="shadow p-3 bg-white rounded" style="height: 117px">
+                <div>
+                    <div class="text-indigo-500 font-bold" style="font-size: 20px"><?php echo $row['active']?> </div>
+                    <div class="text-sm sm:text-base font-semibold">المادة الفعالة</div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 col-12 col-md-4 text-center">
+            <p>
+                تم استعراض بدائل هذا الدواء
+                <span style="color:red;font-size:20px;">
+                <?php echo $row['sim_visits'];?>
+                </span>
+                مرة
+            </p>
+        </div>
+    </div>
+    <div class="row my-3 align-items-center justify-content-center">
+        <hr>
+        <h2 class="text-center qr py-2 my-3">البدائل/المثائل</h2>
+        <?php
+        $i = 0;
+        $qsim = mysqli_query($db, "SELECT * FROM drugs WHERE active = '$active' ORDER BY visits LIMIT 5");
+        while ($rowsim = mysqli_fetch_assoc($qsim)) {
+            $i++;
+            echo '<div class="col-12 col-md-4">';
+            echo '<div class="card" style="width: 18rem;">';
+            echo' <img class="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0" src="/rpng/'.$rowsim["route"].'.png" alt="'.$rowsim["route"].'">';
+            echo ' <div class="card-body">
+                        <h5 class="card-title">'.$rowsim["active"].'</h5>
+                        <p class="card-text">'.$rowsim["name"].'</p>
+                        <a href="#" class="btn btn-primary"> '.$rowsim["id"].'</a>
+                    </div>
+                    </div>
+                    </div>';
+        }?>
+    </div>
+    <div class="row">
+        <hr>
+        <div class="col-12">
+            <section aria-labelledby="related-heading" class="mt-5 sm:mt-24">
+                <h2 id="related-heading" class="text-xl font-bold text-gray-900 text-center qr py-2 my-3">ربما تحب التعرف على هذه الأدوية
+                    <?php  echo $row['arabic']; ?> </h2>
+
+                <div class="text-wrap mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+                    <?php
+                    $qsim   = mysqli_query($db, "SELECT * FROM drugs WHERE active LIKE '$active%'  ORDER BY price+0 ASC LIMIT 20");
+                    while ($rowsim = mysqli_fetch_assoc($qsim)) {
+
+                        echo    '<div class="group relative"><div class="w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:scale-75 lg:h-80 lg:aspect-none">
+            <img src="';
+                        if($rowsim['img'] != ''){ echo $rowsim['img'];}else{ echo "/rpng/". $rowsim['route'].".png";};
+
+                        echo'" alt="'.$rowsim["route"].'" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="drg.php?id='.$rowsim["id"].'">
+                  <span aria-hidden="true" class="absolute inset-0"></span>';
+                        echo $rowsim["arabic"] ;
+                        echo'</a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">'.$rowsim["active"].'</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">'.$rowsim["price"].'</p>
+          </div> </div>';
+
+                    }
+                    ?>
+
+                </div>
+            </section>
+        </div>
+    </div>
 </div>
 
 
 <!--w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md   lg:h-80 -->
 <div class="bg-white">
   <section aria-labelledby="features-heading" class="relative">
-
-
 <div align="center">
-      
-  
-
-
-
 <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7891698547800920"-->
 <!--     crossorigin="anonymous"></script>-->
 <!-- drugs page -->
@@ -184,68 +347,20 @@ include 'menu.php';
 <!--     (adsbygoogle = window.adsbygoogle || []).push({});-->
 <!--</script>-->
 
-
-
-
-
-
-
-
-
-<br>
-
 <script>
 $(document).ready(function(){
-
 $(document).on('click', '.toggled', function(){
-
 $('.hidden').show();
 $(this).hide();
 $('.hid').hide();
-
-
 setTimeout(function(){
 location.reload();
 }, 5000);
-
-
-
-
 });
 
 });
 </script>
 
-
-<br>
-
-<hr>
-<p>
-مرحباً بكم في موقع دليل الدواء الجديد، وتحديداً في صفحة دواء 
-<?php echo $row['arabic']. " ".$row['name'];?>
-
-يعد دواء <?php echo $row['arabic']. " ".$row['name'];?> من أفضل وأقوى الأدوية التي يتم صرفها واستخدامها في علاج 
-<?php echo $row['uses']." ". $row['indications']?>، 
-حيث أنه يحتوي على مادة فعالة وتركيبة قوية جداً في علاج مثل هذه الحالات ألا وهي 
-<?php echo $row['active']?>.
-
-يتوفر دواء 
-<?php echo $row['arabic']. " ".$row['name'];?> في السوق بسعر 
-<?php echo $row['price'];?> وهو من إنتاج شركة 
-<?php echo $row['company'];?> 
- ومن أشهر بدائل دواء
-<?php echo $row['arabic']. " ".$row['name'];?>    
-    
-    
-    <?php
-    $qnum   = mysqli_query($db, "SELECT COUNT(*) as total FROM drugs WHERE active = '$active'");
-    
-    $num=mysqli_fetch_assoc($qnum);
-    
-    ?>
-    
-    
-</p>
 
 
 <script>
@@ -260,210 +375,13 @@ location.reload();
   }, 1000); // stops counting after 4 seconds
 </script>
 
-
-<div class="bg-white py-6 sm:py-8 lg:py-12">
-  <div class="max-w-screen-xl px-4 md:px-8 mx-auto">
-    <!-- text - start -->
-    <div class="mb-10 md:mb-16">
-      <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6"> 
-بدائل دواء 
-<?php echo ucfirst($row['arabic']); ?>
-</h2>
-
-      <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto"> </p>
-    </div>
-    <!-- text - end -->
-
-    <div class="grid grid-cols-2 md:grid-cols-4 md:divide-x gap-8 md:gap-0">
-      
-      
-
-      <!-- stat - start -->
-      <div class="flex flex-col items-center md:p-4">
-        <div class="text-indigo-500 text-xl sm:text-2xl md:text-3xl font-bold"><?php echo $num['total']; ?>+</div>
-        <div class="text-sm sm:text-base font-semibold">عدد البدائل</div>
-      </div>
-
-      <!-- stat - start -->
-      <div class="flex flex-col items-center md:p-4">
-        <div id="visitor-count" class="text-indigo-500 text-xl sm:text-2xl md:text-3xl font-bold ">0+</div>
-        <div class="text-sm sm:text-base font-semibold">زائر</div>
-      </div>
-      <!-- stat - end -->
-
-      <!-- stat - start -->
-      <div class="flex flex-col items-center md:p-4">
-        <div class="text-indigo-500 text-xl sm:text-2xl md:text-3xl font-bold"><?php echo $row['active']?> </div>
-        <div class="text-sm sm:text-base font-semibold">المادة الفعالة</div>
-      </div>
-      <!-- stat - end -->
-    </div>
-  </div>
-</div>
-
-<p>
-تم استعراض بدائل هذا الدواء 
-<span style="color:red;font-size:20px;">
-<?php echo $row['sim_visits'];?>
-</span>
-مرة
-</p>
-<hr>
-
-
-
-<div class="p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 ">
-    <time class="text-lg font-semibold text-gray-900 ">البدائل/المثائل</time>
-    <ol class="mt-3 divide-y divider-gray-200 ">
-
-
-
-    <?php
-$i     = 0;
-$qsim   = mysqli_query($db, "SELECT * FROM drugs WHERE active = '$active' ORDER BY visits LIMIT 5");
-while ($rowsim = mysqli_fetch_assoc($qsim)) {
-$i++;
-
-        echo '<li><a href="drg.php?id='.$rowsim["id"].'" class="block items-center p-3 sm:flex hover:bg-gray-100 ">';
-               echo' <img class="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0" src="/rpng/'.$rowsim["route"].'.png" alt="'.$rowsim["route"].'">';
-                echo'<div class="text-gray-600 ">
-                    <div class="text-lg font-normal"><span class="font-medium text-gray-900 ">'.$rowsim["name"].'</span></div>
-                    <div class="text-sm font-normal">"'.$rowsim["active"].'"</div>';
-                    echo '<span class="inline-flex items-center text-xs font-normal text-gray-500 ">
-                        
-                        '.$rowsim["route"].'
-                    </span> </div></a></li>';
-
-
-    }?>
-
-    </ol>
-</div>
-
-
-
 <a href='/alternatives.php?id=<?php echo $row['id'];?>'>
 <button class='text-2xl  btn bg-green-500 text-white font-medium  hover:shadow-lg  hover:bg-green-600 '>
 اضغط هنا لعرض المزيد من البدائل
 </button></a>
 
-<!-- Related products -->
-    <section aria-labelledby="related-heading" class="mt-16 sm:mt-24">
-      <h2 id="related-heading" class="text-xl font-bold text-gray-900">ربما تحب التعرف على هذه الأدوية</h2>
-
-      <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        
-
-
-
-<?php
-$qsim   = mysqli_query($db, "SELECT * FROM drugs WHERE name LIKE '$first3letters%' ORDER BY RAND() LIMIT 5");
-while ($rowsim = mysqli_fetch_assoc($qsim)) {
-	    
-echo    '<div class="group relative"><div class="w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:scale-75 lg:h-80 lg:aspect-none">
-            <img src="';
-            
-             if($rowsim['img'] != ''){ echo $rowsim['img'];}else{ echo "/rpng/". $rowsim['route'].".png";};
-             
-             echo'" alt="'.$rowsim["route"].'" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-          </div>
-          <div class="mt-4 flex justify-between">
-            <div>
-              <h3 class="text-sm text-gray-700">
-                <a href="drg.php?id='.$rowsim["id"].'">
-                  <span aria-hidden="true" class="absolute inset-0"></span>';
-echo $rowsim["arabic"] ;
-                echo'</a>
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">'.$rowsim["active"].'</p>
-            </div>
-            <p class="text-sm font-medium text-gray-900">'.$rowsim["price"].'</p>
-          </div> </div>';
-          
-}
-?>  
-
-        </div>
-     
-      </div>
-      
-    </section>
-
-
-
-<br>
-<br>
-
-<hr>
-
-
-<ul class="space-y-4 list-disc list-inside text-gray-500 dark:text-gray-400">
-    <li>
-كيف يستعمل دواء<?php echo ucfirst($row['arabic']); ?> ؟
-        <ul class="pl-5 mt-2 space-y-1 list-disk list-inside">
-            <li>
-يستعمل دواء
-<?php echo ucfirst($row['arabic']).$row['name']; ?>
-<br>
-                <?php if($row['uses'] != "sexual tonic"){echo $row['uses'];}else{echo "<span> </span>";} ?>
-<?php echo $row['uses'];?>
-
-            </li>
-            <li><?php echo $row['description'];?>.</li>
-             <li><?php echo $row['indications'];?>.</li>
-        </ul>
-    </li>
-    <li>  ما هي تركيبة دواء <?php echo ucfirst($row['arabic']); ?> 
-        <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
-            <li>
-<h4>تركيبة دواء 
-<?php echo ucfirst($row['arabic']).$row['name']; ?>
-</h4>
-
-</li>
-     <li>يتركب هذا الدواء من : 
-       <?php echo $row['active'];?></li>    
-        </ul>
-    </li>
-    <li>
- ما هي الشركة المنتجة لدواء<?php echo ucfirst($row['arabic']); ?> ؟
-        <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
-            <li>
-<h4>الشركة المنتجة لدواء
-<?php echo ucfirst($row['arabic']).$row['name']; ?>
- </h4></li>
-             هذا الدواء من انتاج شركة  <?php echo $row['company'];?>
-           
-        </ul>
-    </li>
-    
-    
-     <li>
-       ما هي جرعة دواء<?php echo ucfirst($row['arabic']); ?>  ؟
-        <ul class="pl-5 mt-2 space-y-1 list-disk list-inside">
-            <li>
-<h4>جرعة دواء
-<?php echo ucfirst($row['arabic']); ?>
-</h4></li>
-            <li><?php echo $row['dose'];?></li>
-       
-        </ul>
-    </li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class='shareButtons'>
+    <hr>
 Share to
 <br>
 <a href='' id='fbLink' target='_blank'><i class='fab fa-facebook'></i></a>
@@ -473,9 +391,6 @@ Share to
 <hr> 
 <p>انقر لنسخ رابط مشاركة معلومات وسعر هذا الدواء</p>
 <textarea id="txtarea" dir="ltr" style="width:90%;height:30px"></textarea>
-</div>
-
-</div>
 </div>
 
 <script>
@@ -517,13 +432,12 @@ data : {
 
 
 </script>
-</div>
 
 <?php
 else:
 header('Location: /');
 endif;
-
+include 'footer.php'
 ?>
 </body>
 </html>

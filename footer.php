@@ -202,7 +202,7 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-        <p id='copyrightContainer'> جميع الحقوق محفوظة <a href='https://dlildwa.com/' id='copyRightsDiv'>
+        <p id='copyrightContainer'> جميع الحقوق محفوظة <a style="color:#fff" href='https://dlildwa.com/' id='copyRightsDiv'>
                 دليل الدواء الجديد
             </a>&#169;2022 - 2023</p>
     <!-- Copyright -->
