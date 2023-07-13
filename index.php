@@ -34,6 +34,11 @@ $ip = $_SERVER['REMOTE_ADDR'];
             width: 100%;
             max-height: 500px;
         }
+        .drug-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
     </style>
 </head>
     <body>
@@ -142,6 +147,37 @@ $ip = $_SERVER['REMOTE_ADDR'];
 </section>
 
 <section class="DrugsSection container mt-5">
+    <h2 class="m-5 decoration-dashed">دليل الأدوية</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php
+        // Retrieve drugs data from the database
+        $query = "SELECT * FROM drugs ORDER BY visits DESC LIMIT 50";
+        $result = mysqli_query($db, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $drugName = $row['name'];
+            $drugImage = $row['img'];
+            $drugPrice = $row['price'];
+            $drugID = $row['id'];
+            ?>
+            <div class="col">
+                <div class="card">
+                    <img src="<?php echo $drugImage; ?>" class="card-img-top drug-image" alt="<?php echo $drugName; ?>">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><?php echo $drugName; ?></h5>
+                        <p class="card-text">سعر الدواء: <?php echo $drugPrice; ?> جنيه</p>
+                        <a href="/drg.php?id=<?php echo $drugID; ?>" class="btn btn-primary mt-auto">تفاصيل الدواء</a>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+</section>
+
+
+<section class="BestDrugsSection container mt-5">
     <h2 class="m-5 decoration-dashed">اعلى ادويه زياره</h2>
     <div class="container mb-5">
         <div id="drugsCarousel" class="carousel slide" data-bs-ride="carousel">
