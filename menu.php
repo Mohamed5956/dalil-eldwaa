@@ -2,12 +2,17 @@
 include 'conn.php';
 include 'header.php';
 ?>
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <style>
         .navbar {
             background-color: #f8f9fa;
             padding: 10px;
+            display: flex; /* Added */
+            justify-content: space-between; /* Added */
+            align-items: center; /* Added */
         }
 
         .navbar-brand {
@@ -22,6 +27,7 @@ include 'header.php';
         .navbar-nav {
             display: flex;
             flex-direction: row; /* Updated to flex-direction: row */
+            justify-content: flex-end; /* Updated to flex-end */
             align-items: center; /* Align items vertically in the center */
         }
 
@@ -51,6 +57,14 @@ include 'header.php';
             cursor: pointer;
         }
 
+        .menu-icon {
+            display: none;
+            width: 20px;
+            height: 3px;
+            background-color: #333;
+            margin-bottom: 5px;
+        }
+
         @media (max-width: 768px) {
             .navbar-nav {
                 display: none;
@@ -69,8 +83,13 @@ include 'header.php';
             .menu-items.show {
                 display: flex;
             }
-            .nav-link{
-                margin-top:5px;
+
+            .nav-link {
+                margin-top: 5px;
+            }
+
+            .menu-button .menu-icon {
+                display: block;
             }
         }
     </style>
@@ -81,12 +100,17 @@ include 'header.php';
         }
     </script>
 </head>
+<body>
 <nav class="navbar" dir="rtl">
     <a class="navbar-brand" href="/">
         <img src="favy.png" width="68" height="50" alt="" loading="lazy">
         دليل الدواء الجديد
     </a>
-    <button class="menu-button" onclick="toggleMenuItems()">Menu</button>
+    <button class="menu-button" onclick="toggleMenuItems()">
+        <div class="menu-icon"></div>
+        <div class="menu-icon"></div>
+        <div class="menu-icon"></div>
+    </button>
     <div class="navbar-nav menu-items ms-auto mx-4 mt-4">
         <a class="nav-link active" href="/">دليل الدواء الجديد<span class="sr-only">(current)</span></a>
         <a class="nav-link" href="/">بحث بالمادة الفعالة</a>
@@ -113,3 +137,5 @@ include 'header.php';
         ?>
     </div>
 </nav>
+</body>
+</html>

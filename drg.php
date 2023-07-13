@@ -392,7 +392,17 @@ Share to
 <p>انقر لنسخ رابط مشاركة معلومات وسعر هذا الدواء</p>
 <textarea id="txtarea" dir="ltr" style="width:90%;height:30px"></textarea>
 </div>
-
+      <script>
+          let count = 0;
+          let intervalId = setInterval(function(){
+              count++;
+              document.getElementById("visitor-count").innerHTML = count + "+";
+          }, 1); // increments every 1 millisecond
+          setTimeout(function(){
+              clearInterval(intervalId);
+              document.getElementById("visitor-count").innerHTML = <?php echo $row['sim_visits']; ?> + "+";
+          }, 4000); // stops counting after 4 seconds
+      </script>
 <script>
 document.getElementById("fbLink").href       = "https://www.facebook.com/sharer/sharer.php?u="+ window.location.href;
 document.getElementById("waLink").href       = "whatsapp://send?text="+ window.location.href.replace(" ","+");

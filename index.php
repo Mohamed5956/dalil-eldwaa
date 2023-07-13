@@ -29,12 +29,6 @@ $ip = $_SERVER['REMOTE_ADDR'];
 <meta property="og:image" content="https://i.imgur.com/qIgVXpg.png" />
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<?php
-    $qnum   = mysqli_query($db, "SELECT COUNT(*) as total FROM drugs ");
-    
-    $num=mysqli_fetch_assoc($qnum);
-    
-    ?>
     <style>
         .carousel-item img {
             width: 100%;
@@ -98,12 +92,12 @@ $ip = $_SERVER['REMOTE_ADDR'];
         </div>
     </div>
 </section>
-<section class="IconsSection container">
-    <div class="row">
-        <div class="mb-4 col-12 col-md-4 text-center">
+
+<section class="IconsSection container mt-5">
+    <div class="row d-flex align-items-center" style="background-color: #1C2346; padding-top: 25px">
+        <div class="mb-4 col-12 col-md-3 text-center">
             <div class="shadow p-3 bg-white rounded">
                 <div>
-                    <h4 class="font-medium text-gray-900">الشركة</h4>
                     <img src="https://wasfaty.sa/wp-content/uploads/2020/06/logo-rgb-2048x1427.png" alt="logo">
                 </div>
             </div>
@@ -126,7 +120,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
             <div class="shadow p-3 bg-white rounded">
                 <div>
                     <h4 class="font-medium text-gray-900">عدد الأدويه</h4>
-                    <dd class="mt-2 text-gray-500"><?php echo $drugCount; ?></dd>
+                    <div id="drug-count" class="text-indigo-500 text-xl sm:text-2xl md:text-3xl font-bold">0+</div>
                 </div>
             </div>
         </div>
@@ -134,23 +128,22 @@ $ip = $_SERVER['REMOTE_ADDR'];
             <div class="shadow p-3 bg-white rounded">
                 <div>
                     <h4 class="font-medium text-gray-900">عدد الزيارات</h4>
-                    <dd class="mt-2 text-gray-500"><?php  ?></dd>
+                    <dd class="mt-2 text-gray-500"><?php ?></dd>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<section class="articlesSection container">
-    <div>افضل الموضوعات </div>
+<section class="articlesSection container mt-5">
+    <h2>افضل الموضوعات </h2>
 </section>
-<section class="postsSection container">
-    <div>افضل المقالات</div>
+<section class="postsSection container mt-5">
+    <h2>افضل المقالات</h2>
 </section>
 
-<section class="DrugsSection">
+<section class="DrugsSection container mt-5">
+    <h2 class="m-5 decoration-dashed">اعلى ادويه زياره</h2>
     <div class="container mb-5">
-        <h2 class="m-5 decoration-dashed">اعلى ادويه زياره</h2>
         <div id="drugsCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php
@@ -188,16 +181,27 @@ $ip = $_SERVER['REMOTE_ADDR'];
         </div>
     </div>
 </section>
-<div class='shareButtons' style="border:1px solid black; border-radius:5px;width:75%;margin:5px auto;background:#FBFBEF">
-<h4>
-مشاركة دليل الدواء الجديد مع اصدقائك
-</h4>
-<a href='' id='fbLink' target='_blank'> <i class="fab fa-facebook"></i></a>
-<a href='' id='waLink' target='_blank'><i class='fab fa-whatsapp'></i></a>
-<a href='' id='twLink' target='_blank'><i class='fab fa-twitter'></i></a>
-</div>
+<!--<div class='shareButtons' style="border:1px solid black; border-radius:5px;width:75%;margin:5px auto;background:#1C2346">-->
+<!--<h4 style="color: white">-->
+<!--مشاركة دليل الدواء الجديد مع اصدقائك-->
+<!--</h4>-->
+<!--<a href='' id='fbLink' target='_blank'> <i class="fab fa-facebook" style="color: white"></i></a>-->
+<!--<a href='' id='waLink' target='_blank'><i class='fab fa-whatsapp' style="color: white"></i></a>-->
+<!--<a href='' id='twLink' target='_blank'><i class='fab fa-twitter' style="color: white"></i></a>-->
+<!--</div>-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let count = 0;
+    let intervalId = setInterval(function(){
+        count++;
+        document.getElementById("drug-count").innerHTML = count + "+";
+    }, 1);
+    setTimeout(function(){
+        clearInterval(intervalId);
+        document.getElementById("drug-count").innerHTML = <?php echo $drugCount; ?> + "+";
+    }, 2000);
+</script>
 <script>
 document.getElementById("fbLink").href = "https://www.facebook.com/sharer/sharer.php?u="+ window.location.href;
    document.getElementById("waLink").href = "whatsapp://send?text="+ window.location.href.replace(" ","+");

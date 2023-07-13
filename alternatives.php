@@ -31,6 +31,14 @@ include 'menu.php';
             word-wrap: break-word;
             word-break: break-word;
         }
+        h1,h2{
+            background-color: #c4ced7;
+            padding: 20px;
+        }
+        .carousel-item img {
+            width: 100%;
+            max-height: 500px;
+        }
         .hvr-icon-forward:hover .overlay {
             bottom: 75%;
             height: 25%;
