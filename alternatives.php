@@ -137,46 +137,45 @@ echo "<img src='" . $row['img'] . "' height='250' width='300' style='object-fit:
 <br>
 <div align="center">
     
-   <a target="_blank" href="/indications.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">الإستعمال</button></a>
-   <a target="_blank" href="/composition.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"> المكونات</button></a>
-   <a target="_blank" href="/drg.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">السعر</button></a>    
+   <a target="_blank" href="indications.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">الإستعمال</button></a>
+   <a target="_blank" href="composition.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"> المكونات</button></a>
+   <a target="_blank" href="drg.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">السعر</button></a>
     <hr>
 <!-- Related products -->
-    <section aria-labelledby="related-heading" class="mt-5 sm:mt-24">
-      <h2 id="related-heading" class="text-xl font-bold text-gray-900">
-بدائل دواء <?php  echo $row['arabic']; ?> </h2>
+        <section aria-labelledby="related-heading" class="mt-5 sm:mt-24">
+            <h2 id="related-heading" class="text-xl font-bold text-gray-900">
+                بدائل دواء <?php echo $row['arabic']; ?>
+            </h2>
 
-      <div class="text-wrap mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-
-<?php
-$qsim   = mysqli_query($db, "SELECT * FROM drugs WHERE active LIKE '$active%'  ORDER BY price+0 ASC LIMIT 20");
-while ($rowsim = mysqli_fetch_assoc($qsim)) {
-	    
-echo    '<div class="group relative"><div class="w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:scale-75 lg:h-80 lg:aspect-none">
-            <img src="';
-             if($rowsim['img'] != ''){ echo $rowsim['img'];}else{ echo "/rpng/". $rowsim['route'].".png";};
-             
-             echo'" alt="'.$rowsim["route"].'" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-          </div>
-          <div class="mt-4 flex justify-between">
-            <div>
-              <h3 class="text-sm text-gray-700">
-                <a href="drg.php?id='.$rowsim["id"].'">
-                  <span aria-hidden="true" class="absolute inset-0"></span>';
-echo $rowsim["arabic"] ;
-                echo'</a>
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">'.$rowsim["active"].'</p>
+            <div class="text-wrap mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                <?php
+                $qsim = mysqli_query($db, "SELECT * FROM drugs WHERE active LIKE '$active%'  ORDER BY price+0 ASC LIMIT 20");
+                while ($rowsim = mysqli_fetch_assoc($qsim)) {
+                    echo '<div class="group relative">
+              <div class="w-full aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:scale-75">
+                <img src="';
+                    if ($rowsim['img'] != '') {
+                        echo $rowsim['img'];
+                    } else {
+                        echo "/rpng/" . $rowsim['route'] . ".png";
+                    }
+                    echo '" alt="' . $rowsim["route"] . '" class="w-full h-full object-center object-cover">
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div>
+                  <h3 class="text-sm text-gray-700">
+                    <a href="drg.php?id=' . $rowsim["id"] . '">
+                      <span aria-hidden="true" class="absolute inset-0"></span>' . $rowsim["arabic"] . '</a>
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500">' . $rowsim["active"] . '</p>
+                </div>
+                <p class="text-sm font-medium text-gray-900">' . $rowsim["price"] . '</p>
+              </div>
+            </div>';
+                }
+                ?>
             </div>
-            <p class="text-sm font-medium text-gray-900">'.$rowsim["price"].'</p>
-          </div> </div>';
-          
-}
-?>  
-
-        </div>
-    </section>
-
+        </section>
 
 
 

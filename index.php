@@ -166,7 +166,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title"><?php echo $drugName; ?></h5>
                         <p class="card-text">سعر الدواء: <?php echo $drugPrice; ?> جنيه</p>
-                        <a href="/drg.php?id=<?php echo $drugID; ?>" class="btn btn-primary mt-auto">تفاصيل الدواء</a>
+                        <a href="drg.php?id=<?php echo $drugID; ?>" class="btn btn-primary mt-auto">تفاصيل الدواء</a>
                     </div>
                 </div>
             </div>
