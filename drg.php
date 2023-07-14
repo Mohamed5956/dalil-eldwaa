@@ -253,8 +253,8 @@ mysqli_query($db, $sqloccnt);
         <div class="mb-4 col-12 col-md-4 text-center">
             <div class="shadow p-3 bg-white rounded" style="height: 117px">
                 <div>
-                    <div class="text-indigo-500 font-bold" style="font-size: 20px"><?php echo $row['active']?> </div>
-                    <div class="text-sm sm:text-base font-semibold">المادة الفعالة</div>
+                    <div class="text-indigo-500 font-bold text-wrap" style="font-size: 20px"><?php echo $row['active']?> </div>
+                    <div class="text-sm sm:text-base font-semibold ">المادة الفعالة</div>
                 </div>
             </div>
         </div>
@@ -270,15 +270,18 @@ mysqli_query($db, $sqloccnt);
     </div>
     <div class="row my-3 align-items-center justify-content-center">
         <hr>
-        <h2 class="text-center qr py-2 my-3">البدائل/المثائل</h2>
-        <?php
+        <h2 id="related-heading" class="text-xl font-bold text-gray-900 text-center qr py-2 my-3">ربما تحب التعرف على هذه الأدوية
+            <?php  echo $row['arabic']; ?> </h2>        <?php
         $i = 0;
         $qsim = mysqli_query($db, "SELECT * FROM drugs WHERE active = '$active' ORDER BY visits LIMIT 5");
         while ($rowsim = mysqli_fetch_assoc($qsim)) {
             $i++;
             echo '<div class="col-12 col-md-4">';
             echo '<div class="card" style="width: 18rem;">';
-            echo' <img class="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0" src="/rpng/'.$rowsim["route"].'.png" alt="'.$rowsim["route"].'">';
+            echo'  <img src="';
+            if($rowsim['img'] != ''){ echo $rowsim['img'];}else{ echo "/rpng/". $rowsim['route'].".png";};
+
+            echo'" alt="'.$rowsim["route"].'" class="w-full h-full object-center object-cover lg:w-full lg:h-full">';
             echo ' <div class="card-body">
                         <h5 class="card-title">'.$rowsim["active"].'</h5>
                         <p class="card-text">'.$rowsim["name"].'</p>
@@ -287,45 +290,6 @@ mysqli_query($db, $sqloccnt);
                     </div>
                     </div>';
         }?>
-    </div>
-    <div class="row">
-        <hr>
-        <div class="col-12">
-            <section aria-labelledby="related-heading" class="mt-5 sm:mt-24">
-                <h2 id="related-heading" class="text-xl font-bold text-gray-900 text-center qr py-2 my-3">ربما تحب التعرف على هذه الأدوية
-                    <?php  echo $row['arabic']; ?> </h2>
-
-                <div class="text-wrap mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-
-                    <?php
-                    $qsim   = mysqli_query($db, "SELECT * FROM drugs WHERE active LIKE '$active%'  ORDER BY price+0 ASC LIMIT 20");
-                    while ($rowsim = mysqli_fetch_assoc($qsim)) {
-
-                        echo    '<div class="group relative"><div class="w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:scale-75 lg:h-80 lg:aspect-none">
-            <img src="';
-                        if($rowsim['img'] != ''){ echo $rowsim['img'];}else{ echo "/rpng/". $rowsim['route'].".png";};
-
-                        echo'" alt="'.$rowsim["route"].'" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-          </div>
-          <div class="mt-4 flex justify-between">
-            <div>
-              <h3 class="text-sm text-gray-700">
-                <a href="drg.php?id='.$rowsim["id"].'">
-                  <span aria-hidden="true" class="absolute inset-0"></span>';
-                        echo $rowsim["arabic"] ;
-                        echo'</a>
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">'.$rowsim["active"].'</p>
-            </div>
-            <p class="text-sm font-medium text-gray-900">'.$rowsim["price"].'</p>
-          </div> </div>';
-
-                    }
-                    ?>
-
-                </div>
-            </section>
-        </div>
     </div>
 </div>
 

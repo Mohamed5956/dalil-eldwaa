@@ -116,9 +116,10 @@ echo "<img src='" . $row['img'] . "' height='250' width='300' style='object-fit:
 
 يعد دواء <?php echo $row['arabic']. " ".$row['name'];?> من أفضل وأقوى الأدوية التي يتم صرفها واستخدامها في علاج 
 <?php echo $row['uses']." ". $row['indications']?>، 
-حيث أنه يحتوي على مادة فعالة وتركيبة قوية جداً في علاج مثل هذه الحالات ألا وهي 
+حيث أنه يحتوي على مادة فعالة وتركيبة قوية جداً في علاج مثل هذه الحالات ألا وهي
+    <p class="text-wrap">
 <?php echo $row['active']?>.
-
+    </p>
 يتوفر دواء 
 <?php echo $row['arabic']. " ".$row['name'];?> في السوق بسعر 
 <?php echo $row['price'];?> وهو من إنتاج شركة 
@@ -146,33 +147,54 @@ echo "<img src='" . $row['img'] . "' height='250' width='300' style='object-fit:
       <h2 id="related-heading" class="text-xl font-bold text-gray-900">
 بدائل دواء <?php  echo $row['arabic']; ?> </h2>
 
-      <div class="text-wrap mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+      <div class="text-center text-wrap mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+          <?php
+          $i = 0;
+          $qsim   = mysqli_query($db, "SELECT * FROM drugs WHERE active LIKE '$active%'  ORDER BY price+0 ASC LIMIT 20");
+          while ($rowsim = mysqli_fetch_assoc($qsim)) {
+              $i++;
+              echo '<div class="col-12 col-md-4">';
+              echo '<div class="card" style="width: 18rem;">';
+              echo ' <img src="';
+              if($rowsim['img'] != ''){ echo $rowsim['img'];}else{ echo "/rpng/". $rowsim['route'].".png";};
+
+              echo'" alt="'.$rowsim["route"].'" class="w-full h-full object-center object-cover lg:w-full lg:h-full">';
+              echo ' <div class="card-body">
+                        <h5 class="card-title">'.$rowsim["active"].'</h5>
+                        <p class="card-text">'.$rowsim["name"].'</p>
+                        <a href="#" class="btn btn-primary"> '.$rowsim["id"].'</a>
+                    </div>
+                    </div>
+                    </div>';
+          }?>
+
 
 <?php
-$qsim   = mysqli_query($db, "SELECT * FROM drugs WHERE active LIKE '$active%'  ORDER BY price+0 ASC LIMIT 20");
-while ($rowsim = mysqli_fetch_assoc($qsim)) {
-	    
-echo    '<div class="group relative"><div class="w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:scale-75 lg:h-80 lg:aspect-none">
-            <img src="';
-             if($rowsim['img'] != ''){ echo $rowsim['img'];}else{ echo "/rpng/". $rowsim['route'].".png";};
-             
-             echo'" alt="'.$rowsim["route"].'" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-          </div>
-          <div class="mt-4 flex justify-between">
-            <div>
-              <h3 class="text-sm text-gray-700">
-                <a href="drg.php?id='.$rowsim["id"].'">
-                  <span aria-hidden="true" class="absolute inset-0"></span>';
-echo $rowsim["arabic"] ;
-                echo'</a>
-              </h3>
-              <p class="mt-1 text-sm text-gray-500">'.$rowsim["active"].'</p>
-            </div>
-            <p class="text-sm font-medium text-gray-900">'.$rowsim["price"].'</p>
-          </div> </div>';
-          
-}
-?>  
+//$qsim   = mysqli_query($db, "SELECT * FROM drugs WHERE active LIKE '$active%'  ORDER BY price+0 ASC LIMIT 20");
+//while ($rowsim = mysqli_fetch_assoc($qsim)) {
+//
+//echo    '<div class="group relative"><div class="w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:scale-75 lg:h-80 lg:aspect-none">
+//            <img src="';
+//             if($rowsim['img'] != ''){ echo $rowsim['img'];}else{ echo "/rpng/". $rowsim['route'].".png";};
+//
+//             echo'" alt="'.$rowsim["route"].'" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+//          </div>
+//          <div class="mt-4 flex justify-between">
+//            <div>
+//              <h3 class="text-sm text-gray-700">
+//                <a href="drg.php?id='.$rowsim["id"].'">
+//                  <span aria-hidden="true" class="absolute inset-0"></span>';
+//echo $rowsim["arabic"] ;
+//                echo'</a>
+//              </h3>
+//              <p class="mt-1 text-sm text-gray-500">'.$rowsim["active"].'</p>
+//            </div>
+//            <p class="text-sm font-medium text-gray-900">'.$rowsim["price"].'</p>
+//          </div> </div>';
+//
+//}
+//?><!--  -->
 
         </div>
     </section>
