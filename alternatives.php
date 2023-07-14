@@ -32,7 +32,7 @@ include 'menu.php';
             word-break: break-word;
         }
         h1,h2{
-            background-color: #c4ced7;
+            background-color: #eaeaea;
             padding: 20px;
         }
         .carousel-item img {
