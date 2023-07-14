@@ -403,16 +403,11 @@ height:100px;
     margin:10px auto;
 }
 
-
-
 .shareButtons a {
-   
     padding: 5px;
     margin: 2px 10px;
     font-size: 30px;
-
 }
-
 
 .medCard{
       background:#fff;
@@ -423,30 +418,21 @@ height:100px;
       text-align:center;
       box-shadow: 0 0 12px 6px rgb(0 0 0 / 15%);
   }
-  
-   
- 
-  .medcontainer h2{
-      
+
+.medcontainer h2{
        font-size:30px;
        background:#ffc300;
        padding:7px;
        margin:10px;
+}
+
+.redBold{
+    font-weight:bold;
+    color:red;
+    font-size:40px;
+}
        
-       
-       
-        }
-   
-       
-       .redBold{
-           font-weight:bold;
-           color:red;
-           font-size:40px;
-          
-           
-       }
-       
-       #drugImg{
+#drugImg{
         border:1px solid black;
        border-radius:10px;
        }
