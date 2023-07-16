@@ -39,6 +39,10 @@ $ip = $_SERVER['REMOTE_ADDR'];
             height: 200px;
             object-fit: cover;
         }
+        h2{
+            background-color: #eaeaea;
+            padding: 20px;
+        }
     </style>
 </head>
     <body>
@@ -140,10 +144,10 @@ $ip = $_SERVER['REMOTE_ADDR'];
     </div>
 </section>
 <section class="articlesSection container mt-5">
-    <h2>افضل الموضوعات </h2>
+    <h2>أفضل الموضوعات </h2>
 </section>
 <section class="postsSection container mt-5">
-    <h2>افضل المقالات</h2>
+    <h2>أفضل المقالات</h2>
 </section>
 
 <section class="DrugsSection container mt-5">
@@ -176,6 +180,16 @@ $ip = $_SERVER['REMOTE_ADDR'];
     </div>
 </section>
 
+<section class="features text-center container mt-5">
+    <h2>قريبا في دليل الدواء</h2>
+    <div style="width:95%;border:1px solid black;border-radius:5px;margin:5px auto;padding:10px;background:#f8f9fa">
+<!--        <p style="font-size:20px">-->
+<!---->
+<!--        </p>-->
+        <span class="redBold text-center"> الاستشارات الطبيه / اسئلة وأجوبة </span>
+    </div>
+
+</section>
 
 <section class="BestDrugsSection container mt-5">
     <h2 class="m-5 decoration-dashed">اعلى ادويه زياره</h2>
