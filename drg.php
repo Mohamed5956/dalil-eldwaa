@@ -39,7 +39,7 @@ mysqli_query($db, $sqloccnt);
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="robots" content="index, follow" />
-    <title>سعر دواء <?php echo $row['arabic'] . "  " . $row['name'] . " الجديد | " .  "2023"  . " ثمن علاج " . $row['arabic'] . " price | " . $row['price'] ; ?> | دليل الدواء الجديد</title>
+    <title> سعر دواء <?php echo $row['arabic'] . "  " . $row['name'] . " الجديد | " .  "2023"  . " ثمن علاج " . $row['arabic'] . " price | " . $row['price'] ; ?> | دليل الدواء الجديد</title>
     <meta content='دليل الدواء الجديد <?php echo $row['name'] ?> ' name='keywords'/>
     <meta content=' سعر <?php echo  $row['name'] . " - "  . $row['arabic'] . " - "  ?>' property="og:description"/>
     <meta property="og:title" content=" <?php echo $row['arabic'] . " - " . $row['name'] . " price"; ?>">
@@ -60,12 +60,17 @@ mysqli_query($db, $sqloccnt);
     </style>
 </head>
 <body>
+<div class="my-5">
+
+<h5>الرئيسية  > أدوية > <?php echo $row['arabic']?> </h5>
+</div>
+
 <div class="container">
     <div class="row ">
         <div class="col-12 d-flex justify-content-start align-items-center mb-4">
-            <h2 class="card-title">سعر<?php echo $row['arabic'] . " <br> " . ucfirst($row['name']) . " الجديد | 2023"  ?></h2>
+            <h2 class="card-title"> سعر <?php echo $row['arabic'] . " <br> " . ucfirst($row['name']) . " الجديد | 2023"  ?></h2>
         </div>
-        <div align="center" class="mb-3">
+        <div align="center" class="my-5">
             <img src=" <?php echo $row['img']?>" alt="<?php echo $row['arabic']?>"
                  class="card-img-top rounded-lg transform hover:scale-125 transition duration-200"
                  style="object-fit:contain; height: 350px;width: 400px;">
@@ -73,9 +78,10 @@ mysqli_query($db, $sqloccnt);
         <div>
             <h2 id="features-heading" class="font-medium text-gray-500 text-center mt-3">سعر دواء  <?php echo $row['arabic']?></h2>
         </div>
-        <div class="d-flex justify-content-around align-items-center my-3">
+        <div class="d-flex justify-content-center align-items-center align-items-center my-3">
             <a href="https://api.whatsapp.com/send?phone=+201018126196&amp;text=ORDER FROM DLILDWA <?php echo $row['name'];  ;?>."><button class="btn btn-success btnCount" >اطلب عبر واتساب <i class="fab fa-whatsapp"></i></button></a>
-            <a href="tel:+201018126196"><button class="btn btn-primary btnCount" >اطلب عن طريق اتصال</button></a>
+            <a href="tel:+201018126196" class="mx-3">
+                <button class="btn btn-primary btnCount" >اطلب عن طريق اتصال</button></a>
         </div>
 
     </div>
@@ -137,14 +143,14 @@ mysqli_query($db, $sqloccnt);
         </div>
     </div>
     <div class="row my-3">
-        <div class="col-12 d-flex align-items-center justify-content-around">
-            <div>
+        <div class="col-12 d-flex align-items-center justify-content-center">
+            <div class="mx-3">
                 <a target="_blank" href="indications.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">الإستعمال</button></a>
             </div>
-            <div>
+            <div class="mx-3">
                 <a target="_blank" href="composition.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"> المكونات</button></a>
             </div>
-            <div>
+            <div class="mx-3">
                 <a target="_blank" href="alternatives.php?id=<?php echo $row['id'];?>"> <button type="button" class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">البدائل</button></a>
             </div>
 
@@ -271,7 +277,8 @@ mysqli_query($db, $sqloccnt);
     <div class="row my-3 align-items-center justify-content-center">
         <hr>
         <h2 id="related-heading" class="text-xl font-bold text-gray-900 text-center qr py-2 my-3">ربما تحب التعرف على هذه الأدوية
-            <?php  echo $row['arabic']; ?> </h2>        <?php
+            <?php  echo $row['arabic']; ?> </h2>
+        <?php
         $i = 0;
         $qsim = mysqli_query($db, "SELECT * FROM drugs WHERE active = '$active' ORDER BY visits LIMIT 5");
         while ($rowsim = mysqli_fetch_assoc($qsim)) {
@@ -281,7 +288,7 @@ mysqli_query($db, $sqloccnt);
             echo'  <img src="';
             if($rowsim['img'] != ''){ echo $rowsim['img'];}else{ echo "/rpng/". $rowsim['route'].".png";};
 
-            echo'" alt="'.$rowsim["route"].'" class="w-full h-full object-center object-cover lg:w-full lg:h-full">';
+            echo'" alt="'.$rowsim["route"].'" class="w-100">';
             echo ' <div class="card-body">
                         <h5 class="card-title">'.$rowsim["active"].'</h5>
                         <p class="card-text">'.$rowsim["name"].'</p>

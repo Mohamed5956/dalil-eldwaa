@@ -101,9 +101,9 @@ $ip = $_SERVER['REMOTE_ADDR'];
 <section class="IconsSection container mt-5">
     <div class="row d-flex align-items-center" style="background-color: #1C2346; padding-top: 25px">
         <div class="mb-4 col-12 col-md-3 text-center">
-            <div class="shadow p-3 bg-white rounded">
-                <div>
-                    <img src="https://wasfaty.sa/wp-content/uploads/2020/06/logo-rgb-2048x1427.png" alt="logo">
+            <div class="shadow p-3 bg-white rounded" style="height: 100px">
+                <div class="text-center">
+                    <img src="https://wasfaty.sa/wp-content/uploads/2020/06/logo-rgb-2048x1427.png" alt="logo" style="height: 90px" >
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
         }
         ?>
         <div class="mb-4 col-12 col-md-4 text-center">
-            <div class="shadow p-3 bg-white rounded">
+            <div class="shadow p-3 bg-white rounded" style="height: 100px">
                 <div>
                     <h4 class="font-medium text-gray-900">عدد الأدويه</h4>
                     <div id="drug-count" class="text-indigo-500 text-xl sm:text-2xl md:text-3xl font-bold">0+</div>
@@ -130,7 +130,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
             </div>
         </div>
         <div class="mb-4 col-12 col-md-4 text-center">
-            <div class="shadow p-3 bg-white rounded">
+            <div class="shadow p-3 bg-white rounded" style="height: 100px">
                 <div>
                     <h4 class="font-medium text-gray-900">عدد الزيارات</h4>
                     <dd class="mt-2 text-gray-500"><?php ?></dd>

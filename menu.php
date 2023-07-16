@@ -8,12 +8,19 @@ include 'header.php';
     <meta charset="UTF-8">
     <style>
         .navbar {
+            position: relative;
             background-color: #f8f9fa;
             padding: 10px;
             display: flex; /* Added */
             justify-content: space-between; /* Added */
             align-items: center; /* Added */
         }
+
+        /*.menu-button{*/
+        /*    position: absolute;*/
+        /*    top: 30px;*/
+        /*    left: 30px;*/
+        /*}*/
 
         .navbar-brand {
             display: inline-block;
@@ -81,7 +88,7 @@ include 'header.php';
             }
 
             .menu-items.show {
-                display: flex;
+                display: block;
             }
 
             .nav-link {

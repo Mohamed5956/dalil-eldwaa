@@ -74,7 +74,6 @@ echo "<img src='" . $row['img'] . "' height='250' width='300' style='object-fit:
 
     <hr>
 <br>
- مرة
 </div>
 
 <?php
