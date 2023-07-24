@@ -51,37 +51,46 @@
     <!-- Grid container -->
     <div class="container p-4">
         <!-- Section: Social media -->
+<!--        <section class="mb-4">-->
+<!--             Facebook -->
+<!--            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"-->
+<!--            ><i class="fab fa-facebook-f"></i-->
+<!--                ></a>-->
+<!---->
+<!--             Twitter -->
+<!--            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"-->
+<!--            ><i class="fab fa-twitter"></i-->
+<!--                ></a>-->
+<!---->
+<!--             Google -->
+<!--            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"-->
+<!--            ><i class="fab fa-google"></i-->
+<!--                ></a>-->
+<!---->
+<!--             Instagram -->
+<!--            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"-->
+<!--            ><i class="fab fa-instagram"></i-->
+<!--                ></a>-->
+<!---->
+<!--             Linkedin -->
+<!--            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"-->
+<!--            ><i class="fab fa-linkedin-in"></i-->
+<!--                ></a>-->
+<!---->
+<!--             Github -->
+<!--            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"-->
+<!--            ><i class="fab fa-github"></i-->
+<!--                ></a>-->
+<!--        </section>-->
+
+        <!-- Section: Text -->
         <section class="mb-4">
-            <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-facebook-f"></i
-                ></a>
-
-            <!-- Twitter -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-twitter"></i
-                ></a>
-
-            <!-- Google -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-google"></i
-                ></a>
-
-            <!-- Instagram -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-instagram"></i
-                ></a>
-
-            <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-linkedin-in"></i
-                ></a>
-
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-github"></i
-                ></a>
+            <p>
+                دليل الدواء هو افضل موقع عربي للحصول على معلومات عن اسعار واستعمالات وبدائل وتركيبات الادوية بطريقة سهلة وسريعة ونتائج ذات ثقة وجودة تنظيم كبيرة
+                باستخدامك لخدمات موقع دليل الدواء الجديد فانت تتعهد بعدم استخدام المعلومات الطبية او الدوائية الموجودة في الموقع بدون استشارة الطبيب المختص او الصيدلاني فهما وهما فقط الخبيران بالدواء ومنافعه واضراره
+            </p>
         </section>
+        <!-- Section: Text -->
         <!-- Section: Social media -->
 
         <!-- Section: Form -->
@@ -102,7 +111,7 @@
                         <!-- Email input -->
                         <div class="form-outline form-white mb-4">
                             <input type="email" id="form5Example21" class="form-control" />
-                            <label class="form-label" for="form5Example21">Email address</label>
+                            <label class="form-label" for="form5Example21">البريد الألكتروني</label>
                         </div>
                     </div>
                     <!--Grid column-->
@@ -120,14 +129,7 @@
         </section>
         <!-- Section: Form -->
 
-        <!-- Section: Text -->
-        <section class="mb-4">
-            <p>
-                دليل الدواء هو افضل موقع عربي للحصول على معلومات عن اسعار واستعمالات وبدائل وتركيبات الادوية بطريقة سهلة وسريعة ونتائج ذات ثقة وجودة تنظيم كبيرة
-                باستخدامك لخدمات موقع دليل الدواء الجديد فانت تتعهد بعدم استخدام المعلومات الطبية او الدوائية الموجودة في الموقع بدون استشارة الطبيب المختص او الصيدلاني فهما وهما فقط الخبيران بالدواء ومنافعه واضراره
-            </p>
-        </section>
-        <!-- Section: Text -->
+
 
         <!-- Section: Links -->
         <section class="">
@@ -159,16 +161,16 @@
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-white">Link 1</a>
+                            <a class="text-white" href="/">دليل الدواء الجديد<span class="sr-only">(current)</span></a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Link 2</a>
+                            <a class="text-white" href="/">بحث بالمادة الفعالة</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Link 3</a>
+                            <a class="text-white" href="/">دليل استعمالات الادوية</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Link 4</a>
+                            <a class="text-white" href="/dl.php">كل الكتب</a>
                         </li>
                     </ul>
                 </div>
@@ -180,16 +182,10 @@
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-white">Link 1</a>
+                            <a class="text-white" href="https://dlil-alasaar.com">دليل الأسعار</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
+                            <a class="text-white" href="/contact.php">اتصل بنا</a>
                         </li>
                     </ul>
                 </div>

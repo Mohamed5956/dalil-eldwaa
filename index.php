@@ -145,9 +145,102 @@ $ip = $_SERVER['REMOTE_ADDR'];
 </section>
 <section class="articlesSection container mt-5">
     <h2>أفضل الموضوعات </h2>
+    <div class="row">
+        <div class="col-4 mb-5">
+            <h3>سعر وبدائل ليفاسيل Levasyl أكياس للتخسيس 2023</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2022/09/ليفاسيل-أكياس-للتخسيسالسعر-والبدائل-والإستعمالات.png" alt="post1"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/levasyl-for-weight-loss/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>سعر اريكتاليس 5 وكل ما تود معرفته عنه</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2022/12/download.jpg" alt="post2"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/erectalis-5/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>كريم سانسو كولاجين (الأسعار والمواصفات)</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2022/12/77088-1-780x405.jpg" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/sanso-collagen-cream-price/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>بانادول جوينت Panadol joint – أفضل مسكن ألم</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2022/08/%D8%A8%D8%A7%D9%86%D8%A7%D8%AF%D9%88%D9%84-%D8%AC%D9%88%D9%8A%D9%86%D8%AA.png" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/panadol-joint/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>  بدائل Xanax لعلاج القلق والهلع (وكل ما تود معرفته عنه)</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2022/12/%D8%A8%D8%AF%D8%A7%D8%A6%D9%84-xanax.webp" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/xanax-alternatives/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>كيورا زونا سبراي Cura Zona Spray لتساقط الشعر 2023 </h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2023/01/Cura-Zona-Spray-780x405.webp" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/cura-zona-spray/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>سعر وبدائل دواء بريجابالين pregabalin للأعصاب</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2022/08/%D8%A8%D8%B1%D8%AC%D8%A7%D9%84%D8%A8%D9%8A%D9%86.png" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/pregabalin/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>كل ما تحتاج إلى معرفته عن سيريبرو بروف</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2023/01/%D8%B3%D9%8A%D8%B1%D9%8A%D8%A8%D8%B1%D9%88-%D8%A8%D8%B1%D9%88%D9%81.jpg" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/cerebroprove/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>جل لعلاج حب الشباب Lamivex (وكل ما تود معرفته عنه)</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2023/01/%D9%84%D8%A7%D9%85%D9%8A%D9%81%D9%8A%D9%83%D8%B3.jpg" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/lamivex-gel/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+    </div>
 </section>
 <section class="postsSection container mt-5">
     <h2>أفضل المقالات</h2>
+
+    <div class="row">
+        <div class="col-4 mb-5">
+            <h3>سعر فورفلوزين 10 مجم ودواعي الاستعمال</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2023/01/%D9%81%D9%88%D8%B1%D9%81%D9%84%D9%88%D8%B2%D9%8A%D9%86-10-%D8%B3%D8%B9%D8%B1.jpg" alt="post1"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/forflozin-10-price/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>كيورا زونا سبراي Cura Zona Spray لتساقط الشعر 2023 </h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2023/01/Cura-Zona-Spray-780x405.webp" alt="post2"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/cura-zona-spray/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>جل لعلاج حب الشباب Lamivex (وكل ما تود معرفته عنه)</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2023/01/%D9%84%D8%A7%D9%85%D9%8A%D9%81%D9%8A%D9%83%D8%B3.jpg" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/lamivex-gel/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>بدائل Arcoxia لعلاج التهاب المفاصل (كل ما تريد معرفته عنه)</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2023/01/arcoxia.jpg" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/arcoxia-alternatives/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3> ليفاسيل بودر للتخسيس وسد الشهية (وكل ما تود معرفته عنه)</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2022/09/%D9%84%D9%8A%D9%81%D8%A7%D8%B3%D9%8A%D9%84-%D8%A3%D9%83%D9%8A%D8%A7%D8%B3-%D9%84%D9%84%D8%AA%D8%AE%D8%B3%D9%8A%D8%B3%D8%A7%D9%84%D8%B3%D8%B9%D8%B1-%D9%88%D8%A7%D9%84%D8%A8%D8%AF%D8%A7%D8%A6%D9%84-%D9%88%D8%A7%D9%84%D8%A5%D8%B3%D8%AA%D8%B9%D9%85%D8%A7%D9%84%D8%A7%D8%AA-780x405.png" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/levasyl-powder/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+
+        <div class="col-4 mb-5">
+            <h3>تساقط الشعر – الأسباب وأفضل طرق العلاج للرجال والنساء</h3>
+            <img class="w-100" style="height: 300px" src="https://www.dlildwa.com/artopics/wp-content/uploads/2022/09/%D8%AA%D8%B3%D8%A7%D9%82%D8%B7-%D8%A7%D9%84%D8%B4%D8%B9%D8%B1-%D8%A7%D9%84%D8%A3%D8%B3%D8%A8%D8%A7%D8%A8-%D9%88%D8%A3%D9%81%D8%B6%D9%84-%D8%B7%D8%B1%D9%82-%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D9%84%D9%84%D8%B1%D8%AC%D8%A7%D9%84-%D9%88%D8%A7%D9%84%D9%86%D8%B3%D8%A7%D8%A1-768x448.jpg" alt="post3"/>
+            <h3 class="text-center"><a target="_blank" href="https://www.dlildwa.com/artopics/hair-regrowth-minoxidil/">أذهب الى الموضوع مباشرة</a></h3>
+        </div>
+    </div>
 </section>
 
 <section class="DrugsSection container mt-5">
